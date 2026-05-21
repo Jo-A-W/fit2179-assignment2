@@ -1,0 +1,51 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Where Australia Sends Its Food (2024)",
+    "subtitle": "Darker = higher export value in AUD millions",
+    "fontSize": 16,
+    "subtitleFontSize": 12
+  },
+  "width": "container",
+  "height": 400,
+  "projection": {"type": "naturalEarth1"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+        "format": {"type": "topojson", "feature": "countries"}
+      },
+      "mark": {"type": "geoshape", "fill": "#e8e8e8", "stroke": "white", "strokeWidth": 0.5}
+    },
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+        "format": {"type": "topojson", "feature": "countries"}
+      },
+      "transform": [
+        {
+          "lookup": "id",
+          "from": {
+            "data": {"url": "data/food_exports_by_country_2024.csv"},
+            "key": "id",
+            "fields": ["country", "export_value_aud_millions"]
+          }
+        },
+        {"filter": "datum.export_value_aud_millions != null"}
+      ],
+      "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5},
+      "encoding": {
+        "color": {
+          "field": "export_value_aud_millions",
+          "type": "quantitative",
+          "title": "AUD Millions",
+          "scale": {"scheme": "oranges"}
+        },
+        "tooltip": [
+          {"field": "country", "type": "nominal", "title": "Country"},
+          {"field": "export_value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": ",.0f"}
+        ]
+      }
+    }
+  ]
+}

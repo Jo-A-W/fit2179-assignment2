@@ -1,21 +1,21 @@
-country,iso,export_value_aud_millions
-China,CHN,15800
-Japan,JPN,5200
-South Korea,KOR,3100
-United States,USA,2800
-Indonesia,IDN,2600
-Vietnam,VNM,2100
-Malaysia,MYS,1800
-Philippines,PHL,1500
-Thailand,THA,1200
-India,IND,1100
-United Kingdom,GBR,900
-New Zealand,NZL,850
-Saudi Arabia,SAU,700
-Singapore,SGP,650
-United Arab Emirates,ARE,550
-Taiwan,TWN,500
-Egypt,EGY,480
-Bangladesh,BGD,420
-Pakistan,PAK,380
-Canada,CAN,350
+country,id,export_value_aud_millions
+China,156,15800
+Japan,392,5200
+South Korea,410,3100
+United States,840,2800
+Indonesia,360,2600
+Vietnam,704,2100
+Malaysia,458,1800
+Philippines,608,1500
+Thailand,764,1200
+India,356,1100
+United Kingdom,826,900
+New Zealand,554,850
+Saudi Arabia,682,700
+Singapore,702,650
+United Arab Emirates,784,550
+Taiwan,158,500
+Egypt,818,480
+Bangladesh,50,420
+Pakistan,586,380
+Canada,124,350

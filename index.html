@@ -144,6 +144,11 @@
 			actions: false,
 			renderer: 'svg'
 		}).catch(console.error);
+        
+        vegaEmbed('#chart_world_export_map', 'charts/world_map.json', {
+            actions: false,
+            renderer: 'svg'
+        }).catch(console.error);
 	</script>
 
 </body>
