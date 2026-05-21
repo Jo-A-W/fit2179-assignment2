@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
   "title": {
     "text": "Australian Food Exports by Category",
     "subtitle": "Use the slider to explore different years",

@@ -1,19 +1,20 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 400,
+  "height": 300,
   "title": {
     "text": "Australia's Total Food Exports (2006 to 2025)",
     "subtitle": "Value in AUD millions",
     "fontSize": 16,
     "subtitleFontSize": 12
   },
-  "width": "container",
-  "height": 300,
   "data": {
     "url": "data/food_exports_total_by_year.csv"
   },
   "mark": {
     "type": "line",
-    "point": true,
+    "point": {"filled": true, "color": "#b35900"},
     "color": "#b35900",
     "strokeWidth": 3
   },

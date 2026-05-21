@@ -1,13 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 800,
+  "height": 400,
   "title": {
     "text": "Where Australia Sends Its Food (2024)",
     "subtitle": "Darker = higher export value in AUD millions",
     "fontSize": 16,
     "subtitleFontSize": 12
   },
-  "width": "container",
-  "height": 400,
   "projection": {"type": "naturalEarth1"},
   "layer": [
     {

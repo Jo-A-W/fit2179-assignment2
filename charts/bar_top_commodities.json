@@ -1,13 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 280,
+  "height": 400,
   "title": {
     "text": "Top 15 Australian Food Exports (2024)",
     "subtitle": "Value in AUD millions",
     "fontSize": 16,
     "subtitleFontSize": 12
   },
-  "width": "container",
-  "height": 400,
   "data": {
     "url": "data/food_exports_top_commodities_2024.csv"
   },
