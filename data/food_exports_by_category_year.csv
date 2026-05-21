@@ -1,0 +1,161 @@
+category,year,value_aud_millions
+Beverages,2006,2944.61
+Beverages,2007,3154.65
+Beverages,2008,2704.2599999999998
+Beverages,2009,2523.4
+Beverages,2010,2352.81
+Beverages,2011,2165.77
+Beverages,2012,2134.7
+Beverages,2013,2109.4
+Beverages,2014,2154.8399999999997
+Beverages,2015,2537.71
+Beverages,2016,2698.1
+Beverages,2017,3063.42
+Beverages,2018,3418.0499999999997
+Beverages,2019,3612.3900000000003
+Beverages,2020,3328.18
+Beverages,2021,2606.1099999999997
+Beverages,2022,2670.9500000000003
+Beverages,2023,2658.66
+Beverages,2024,3301.29
+Beverages,2025,3161.99
+Dairy & Eggs,2006,2424.32
+Dairy & Eggs,2007,2436.02
+Dairy & Eggs,2008,2653.84
+Dairy & Eggs,2009,2137.2100000000005
+Dairy & Eggs,2010,2160.25
+Dairy & Eggs,2011,2172.63
+Dairy & Eggs,2012,2171.2099999999996
+Dairy & Eggs,2013,2305.69
+Dairy & Eggs,2014,2561.25
+Dairy & Eggs,2015,2388.57
+Dairy & Eggs,2016,2208.71
+Dairy & Eggs,2017,2344.8
+Dairy & Eggs,2018,2479.72
+Dairy & Eggs,2019,2486.88
+Dairy & Eggs,2020,2545.02
+Dairy & Eggs,2021,2949.05
+Dairy & Eggs,2022,3382.97
+Dairy & Eggs,2023,2999.5
+Dairy & Eggs,2024,3424.08
+Dairy & Eggs,2025,3557.34
+Fruit & Vegetables,2006,1451.53
+Fruit & Vegetables,2007,1285.1200000000001
+Fruit & Vegetables,2008,1406.9799999999998
+Fruit & Vegetables,2009,1688.27
+Fruit & Vegetables,2010,1554.3400000000001
+Fruit & Vegetables,2011,1672.6
+Fruit & Vegetables,2012,2084.11
+Fruit & Vegetables,2013,2219.1100000000006
+Fruit & Vegetables,2014,2363.6
+Fruit & Vegetables,2015,3894.9
+Fruit & Vegetables,2016,4152.280000000001
+Fruit & Vegetables,2017,5099.15
+Fruit & Vegetables,2018,3567.76
+Fruit & Vegetables,2019,4111.29
+Fruit & Vegetables,2020,4127.22
+Fruit & Vegetables,2021,4510.36
+Fruit & Vegetables,2022,5026.35
+Fruit & Vegetables,2023,5888.999999999999
+Fruit & Vegetables,2024,7065.09
+Fruit & Vegetables,2025,7205.33
+Grains & Cereals,2006,5192.5599999999995
+Grains & Cereals,2007,3361.879999999999
+Grains & Cereals,2008,6096.550000000001
+Grains & Cereals,2009,6484.470000000001
+Grains & Cereals,2010,5863.050000000001
+Grains & Cereals,2011,8490.9
+Grains & Cereals,2012,9038.080000000002
+Grains & Cereals,2013,9078.949999999999
+Grains & Cereals,2014,8974.74
+Grains & Cereals,2015,9338.869999999999
+Grains & Cereals,2016,7581.36
+Grains & Cereals,2017,9334.86
+Grains & Cereals,2018,7326.610000000001
+Grains & Cereals,2019,5890.31
+Grains & Cereals,2020,6437.83
+Grains & Cereals,2021,14105.26
+Grains & Cereals,2022,20672.169999999995
+Grains & Cereals,2023,20629.110000000004
+Grains & Cereals,2024,13746.0
+Grains & Cereals,2025,16158.559999999998
+Meat & Livestock,2006,7967.140000000001
+Meat & Livestock,2007,7554.06
+Meat & Livestock,2008,8316.96
+Meat & Livestock,2009,7788.130000000001
+Meat & Livestock,2010,7852.66
+Meat & Livestock,2011,8200.41
+Meat & Livestock,2012,8251.0
+Meat & Livestock,2013,9686.210000000003
+Meat & Livestock,2014,13190.87
+Meat & Livestock,2015,15032.54
+Meat & Livestock,2016,12965.58
+Meat & Livestock,2017,13452.04
+Meat & Livestock,2018,15429.51
+Meat & Livestock,2019,18586.180000000004
+Meat & Livestock,2020,16654.690000000002
+Meat & Livestock,2021,16448.24
+Meat & Livestock,2022,18117.010000000002
+Meat & Livestock,2023,19032.05
+Meat & Livestock,2024,22437.65
+Meat & Livestock,2025,28475.72
+Other Food,2006,1442.04
+Other Food,2007,1358.9499999999998
+Other Food,2008,1862.6799999999998
+Other Food,2009,2058.7000000000003
+Other Food,2010,1945.44
+Other Food,2011,2099.94
+Other Food,2012,2309.49
+Other Food,2013,2325.42
+Other Food,2014,2345.0299999999997
+Other Food,2015,3073.3899999999994
+Other Food,2016,3741.6100000000006
+Other Food,2017,4331.19
+Other Food,2018,4390.330000000001
+Other Food,2019,4404.000000000001
+Other Food,2020,3964.9400000000005
+Other Food,2021,3572.7200000000003
+Other Food,2022,3927.94
+Other Food,2023,4095.36
+Other Food,2024,3867.1499999999996
+Other Food,2025,4106.36
+Seafood,2006,1221.57
+Seafood,2007,1110.47
+Seafood,2008,1103.84
+Seafood,2009,1034.48
+Seafood,2010,1016.17
+Seafood,2011,1062.41
+Seafood,2012,952.48
+Seafood,2013,1022.9599999999999
+Seafood,2014,1208.03
+Seafood,2015,1395.3300000000002
+Seafood,2016,1377.47
+Seafood,2017,1422.4599999999998
+Seafood,2018,1469.1999999999998
+Seafood,2019,1528.75
+Seafood,2020,1229.64
+Seafood,2021,1205.3600000000001
+Seafood,2022,1204.5699999999997
+Seafood,2023,1345.1699999999998
+Seafood,2024,1217.87
+Seafood,2025,1574.93
+Sugar & Confectionery,2006,2198.36
+Sugar & Confectionery,2007,1480.3
+Sugar & Confectionery,2008,1472.7599999999998
+Sugar & Confectionery,2009,1928.5399999999997
+Sugar & Confectionery,2010,2601.5199999999995
+Sugar & Confectionery,2011,1708.3600000000001
+Sugar & Confectionery,2012,1720.97
+Sugar & Confectionery,2013,1742.75
+Sugar & Confectionery,2014,1871.0900000000001
+Sugar & Confectionery,2015,2083.98
+Sugar & Confectionery,2016,2657.95
+Sugar & Confectionery,2017,2595.9500000000003
+Sugar & Confectionery,2018,1914.6800000000003
+Sugar & Confectionery,2019,2007.29
+Sugar & Confectionery,2020,2143.07
+Sugar & Confectionery,2021,2781.26
+Sugar & Confectionery,2022,2701.4100000000003
+Sugar & Confectionery,2023,3575.5800000000004
+Sugar & Confectionery,2024,2879.13
+Sugar & Confectionery,2025,2420.76
