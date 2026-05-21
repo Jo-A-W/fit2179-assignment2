@@ -1,0 +1,36 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Top 15 Australian Food Exports (2024)",
+    "subtitle": "Value in AUD millions",
+    "fontSize": 16,
+    "subtitleFontSize": 12
+  },
+  "width": "container",
+  "height": 400,
+  "data": {
+    "url": "data/food_exports_top_commodities_2024.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "color": "#b35900"
+  },
+  "encoding": {
+    "y": {
+      "field": "commodity_clean",
+      "type": "nominal",
+      "title": null,
+      "sort": "-x"
+    },
+    "x": {
+      "field": "value_aud_millions",
+      "type": "quantitative",
+      "title": "AUD Millions",
+      "axis": {"format": ",.0f"}
+    },
+    "tooltip": [
+      {"field": "commodity_clean", "type": "nominal", "title": "Commodity"},
+      {"field": "value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": ",.0f"}
+    ]
+  }
+}

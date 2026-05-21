@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Australian Food Exports by Category",
+    "subtitle": "Use the slider to explore different years",
+    "fontSize": 16,
+    "subtitleFontSize": 12
+  },
+  "width": 300,
+  "height": 300,
+  "data": {
+    "url": "data/food_exports_by_category_year.csv"
+  },
+  "params": [
+    {
+      "name": "year_select",
+      "value": 2024,
+      "bind": {
+        "input": "range",
+        "min": 2006,
+        "max": 2025,
+        "step": 1,
+        "name": "Select Year: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.year == year_select"}
+  ],
+  "mark": {"type": "arc", "innerRadius": 80},
+  "encoding": {
+    "theta": {
+      "field": "value_aud_millions",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "title": "Category",
+      "scale": {
+        "range": ["#b35900","#e07b2a","#f0a050","#f5c07a","#7a3b00","#d4541a","#ffcc88","#c46d1e"]
+      }
+    },
+    "tooltip": [
+      {"field": "category", "type": "nominal", "title": "Category"},
+      {"field": "value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": ",.0f"}
+    ]
+  }
+}

@@ -144,8 +144,17 @@
 			actions: false,
 			renderer: 'svg'
 		}).catch(console.error);
-        
+
         vegaEmbed('#chart_world_export_map', 'charts/world_map.json', {
+            actions: false,
+            renderer: 'svg'
+        }).catch(console.error);
+
+        vegaEmbed('#chart_donut', 'charts/donut_categories.json', {
+            actions: false,
+            renderer: 'svg'
+        }).catch(console.error);
+        vegaEmbed('#chart_export_bar', 'charts/bar_top_commodities.json', {
             actions: false,
             renderer: 'svg'
         }).catch(console.error);
