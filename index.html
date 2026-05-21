@@ -189,6 +189,9 @@
 				<div class="chart-box" id="chart_export_bar"></div>
 				<div class="chart-box" id="chart_donut2"></div>
 			</div>
+            <div class="chart-row">
+                <div class="chart-box" id="chart_area"></div>
+            </div>
 			<div class="chart-row">
 				<div class="chart-box" id="chart_world_export_map"></div>
 			</div>
@@ -280,6 +283,10 @@
 			actions: false,
 			renderer: 'svg'
 		}).catch(console.error);
+        vegaEmbed('#chart_area', 'charts/area_chart.json', {
+            actions: false,
+            renderer: 'svg'
+        }).catch(console.error);
 	</script>
 
 </body>
