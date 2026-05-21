@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Australia's Total Food Exports (2006–2025)",
+    "text": "Australia's Total Food Exports (2006 to 2025)",
     "subtitle": "Value in AUD millions",
     "fontSize": 16,
     "subtitleFontSize": 12
