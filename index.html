@@ -1,148 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Australia's Food Trade Story</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Australia's Food Trade Story</title>
 
-  <!-- Vega-Lite libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+	<!-- Vega-Lite libraries -->
+	<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-  <!-- Basic styling -->
-  <style>
-    body {
-      font-family: Georgia, serif;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #fffdf7;
-      color: #2c2c2c;
-    }
+	<!-- Basic styling -->
+	<style>
+		body {
+			font-family: Georgia, serif;
+			max-width: 1100px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fffdf7;
+			color: #2c2c2c;
+		}
 
-    h1 {
-      font-size: 2.5em;
-      text-align: center;
-      color: #b35900;
-    }
+		h1 {
+			font-size: 2.5em;
+			text-align: center;
+			color: #b35900;
+		}
 
-    h2 {
-      font-size: 1.6em;
-      color: #b35900;
-      border-bottom: 2px solid #b35900;
-      padding-bottom: 5px;
-      margin-top: 60px;
-    }
+		h2 {
+			font-size: 1.6em;
+			color: #b35900;
+			border-bottom: 2px solid #b35900;
+			padding-bottom: 5px;
+			margin-top: 60px;
+		}
 
-    p {
-      font-size: 1.1em;
-      line-height: 1.8;
-      max-width: 800px;
-    }
+		p {
+			font-size: 1.1em;
+			line-height: 1.8;
+			max-width: 800px;
+		}
 
-    .chart-row {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      margin: 30px 0;
-    }
+		.chart-row {
+			display: flex;
+			gap: 30px;
+			flex-wrap: wrap;
+			margin: 30px 0;
+		}
 
-    .chart-box {
-      flex: 1;
-      min-width: 300px;
-    }
+		.chart-box {
+			flex: 1;
+			min-width: 300px;
+		}
 
-    footer {
-      margin-top: 80px;
-      font-size: 0.85em;
-      color: #888;
-      border-top: 1px solid #ccc;
-      padding-top: 20px;
-    }
-  </style>
+		footer {
+			margin-top: 80px;
+			font-size: 0.85em;
+			color: #888;
+			border-top: 1px solid #ccc;
+			padding-top: 20px;
+		}
+	</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <h1>🌾 Australia's Food Trade Story</h1>
-  <p style="text-align:center; font-size:1.2em;">
-    How Australia feeds the world — and what the world sends back.
-  </p>
+	<!-- HEADER -->
+	<h1>🌾 Australia's Food Trade Story</h1>
+	<p style="text-align:center; font-size:1.2em;">
+		How Australia feeds the world — and what the world sends back.
+	</p>
 
-  <!-- SECTION 1 -->
-  <h2>The Big Picture</h2>
-  <p>
-    Australia is one of the world's major food exporters. 
-    This section shows how the total value of food exports and 
-    imports has changed over time.
-  </p>
-  <div class="chart-row">
-    <div class="chart-box" id="chart_line"></div>
-    <div class="chart-box" id="chart_donut"></div>
-  </div>
+	<!-- SECTION 1 -->
+	<h2>The Big Picture</h2>
+	<p>
+		Australia is one of the world's major food exporters.
+		This section shows how the total value of food exports and
+		imports has changed over time.
+	</p>
+	<div class="chart-row">
+		<div class="chart-box" id="chart_line"></div>
+		<div class="chart-box" id="chart_donut"></div>
+	</div>
 
-  <!-- SECTION 2 -->
-  <h2>What Australia Exports</h2>
-  <p>
-    From beef to wheat, Australia exports a wide variety of 
-    food products. Here are the biggest categories.
-  </p>
-  <div class="chart-row">
-    <div class="chart-box" id="chart_export_bar"></div>
-    <div class="chart-box" id="chart_world_export_map"></div>
-  </div>
+	<!-- SECTION 2 -->
+	<h2>What Australia Exports</h2>
+	<p>
+		From beef to wheat, Australia exports a wide variety of
+		food products. Here are the biggest categories.
+	</p>
+	<div class="chart-row">
+		<div class="chart-box" id="chart_export_bar"></div>
+		<div class="chart-box" id="chart_world_export_map"></div>
+	</div>
 
-  <!-- SECTION 3 -->
-  <h2>What Australia Imports</h2>
-  <p>
-    Despite being a major food producer, Australia still imports 
-    significant amounts of food from around the world.
-  </p>
-  <div class="chart-row">
-    <div class="chart-box" id="chart_import_bar"></div>
-    <div class="chart-box" id="chart_world_import_map"></div>
-  </div>
+	<!-- SECTION 3 -->
+	<h2>What Australia Imports</h2>
+	<p>
+		Despite being a major food producer, Australia still imports
+		significant amounts of food from around the world.
+	</p>
+	<div class="chart-row">
+		<div class="chart-box" id="chart_import_bar"></div>
+		<div class="chart-box" id="chart_world_import_map"></div>
+	</div>
 
-  <!-- SECTION 4 -->
-  <h2>State by State</h2>
-  <p>
-    Different states specialise in different food products. 
-    Western Australia leads in wheat, Queensland in beef, 
-    and Tasmania in seafood.
-  </p>
-  <div class="chart-row">
-    <div class="chart-box" id="chart_aus_map"></div>
-    <div class="chart-box" id="chart_heatmap"></div>
-  </div>
+	<!-- SECTION 4 -->
+	<h2>State by State</h2>
+	<p>
+		Different states specialise in different food products.
+		Western Australia leads in wheat, Queensland in beef,
+		and Tasmania in seafood.
+	</p>
+	<div class="chart-row">
+		<div class="chart-box" id="chart_aus_map"></div>
+		<div class="chart-box" id="chart_heatmap"></div>
+	</div>
 
-  <!-- SECTION 5 -->
-  <h2>Trends Over Time</h2>
-  <p>
-    Australia's trading relationships have shifted significantly 
-    over the past two decades. China has grown to become 
-    Australia's largest food export market.
-  </p>
-  <div class="chart-row">
-    <div class="chart-box" id="chart_slope"></div>
-    <div class="chart-box" id="chart_bubble"></div>
-  </div>
+	<!-- SECTION 5 -->
+	<h2>Trends Over Time</h2>
+	<p>
+		Australia's trading relationships have shifted significantly
+		over the past two decades. China has grown to become
+		Australia's largest food export market.
+	</p>
+	<div class="chart-row">
+		<div class="chart-box" id="chart_slope"></div>
+		<div class="chart-box" id="chart_bubble"></div>
+	</div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>Data sources:
-      <a href="https://www.dfat.gov.au/trade/trade-and-investment-data-information-and-publications/trade-statistics/trade-statistical-pivot-tables">DFAT Trade Statistics</a> |
-      <a href="https://www.agriculture.gov.au/abares/research-topics/agricultural-outlook/data">ABARES Agricultural Commodities</a>
-    </p>
-    <p>Author: Jordy Awangsaputra | FIT2179 Data Visualisation 2 | Monash University | 2026</p>
-  </footer>
+	<!-- FOOTER -->
+	<footer>
+		<p>Data sources:
+			<a href="https://www.dfat.gov.au/trade/trade-and-investment-data-information-and-publications/trade-statistics/trade-statistical-pivot-tables">DFAT Trade Statistics</a> |
+			<a href="https://www.agriculture.gov.au/abares/research-topics/agricultural-outlook/data">ABARES Agricultural Commodities</a>
+		</p>
+		<p>Author: Jordy Awangsaputra | FIT2179 Data Visualisation 2 | Monash University | 2026</p>
+	</footer>
 
-  <!-- VEGA-LITE CHARTS WILL GO HERE -->
-  <script>
-    // Charts will be added here one by one
-    console.log("Page loaded successfully!");
-  </script>
+	<!-- VEGA-LITE CHARTS -->
+	<script>
+		vegaEmbed('#chart_line', 'charts/line_total_exports.json', {
+			actions: false,
+			renderer: 'svg'
+		}).catch(console.error);
+	</script>
 
 </body>
 </html>
