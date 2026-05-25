@@ -245,6 +245,9 @@
 				<div class="chart-box" id="chart_slope"></div>
 				<div class="chart-box" id="chart_bubble"></div>
 			</div>
+            <div class="chart-row">
+                <div class="chart-box" id="chart_line_commodities"></div>
+            </div>
 		</div>
 
 	</div>
@@ -284,6 +287,10 @@
 			renderer: 'svg'
 		}).catch(console.error);
         vegaEmbed('#chart_area', 'charts/area_chart.json', {
+            actions: false,
+            renderer: 'svg'
+        }).catch(console.error);
+        vegaEmbed('#chart_line_commodities', 'charts/line_commodities.json', {
             actions: false,
             renderer: 'svg'
         }).catch(console.error);

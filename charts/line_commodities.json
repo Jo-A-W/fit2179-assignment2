@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 750,
+  "height": 350,
+  "title": {
+    "text": "Key Australian Food Exports Over Time",
+    "subtitle": "Value in AUD millions — click a category to highlight",
+    "fontSize": 16,
+    "subtitleFontSize": 12
+  },
+  "data": {
+    "url": "data/abares_key_commodities_exports.csv"
+  },
+  "params": [
+    {
+      "name": "commodity_select",
+      "select": {"type": "point", "fields": ["commodity"]},
+      "bind": "legend"
+    }
+  ],
+  "mark": {
+    "type": "line",
+    "point": true,
+    "strokeWidth": 2.5
+  },
+  "encoding": {
+    "x": {
+      "field": "financial_year",
+      "type": "ordinal",
+      "title": "Financial Year",
+      "axis": {"labelAngle": -45}
+    },
+    "y": {
+      "field": "value_aud_millions",
+      "type": "quantitative",
+      "title": "AUD Millions",
+      "axis": {"format": ",.0f"}
+    },
+    "color": {
+      "field": "commodity",
+      "type": "nominal",
+      "title": "Commodity",
+      "scale": {
+        "range": ["#b35900","#e07b2a","#f0a050","#7a3b00","#d4541a","#ffcc88","#c46d1e","#f5c07a","#5c2800","#e8a060"]
+      }
+    },
+    "opacity": {
+      "condition": {"param": "commodity_select", "value": 1},
+      "value": 0.15
+    },
+    "tooltip": [
+      {"field": "financial_year", "type": "ordinal", "title": "Year"},
+      {"field": "commodity", "type": "nominal", "title": "Commodity"},
+      {"field": "value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": ",.0f"}
+    ]
+  }
+}
