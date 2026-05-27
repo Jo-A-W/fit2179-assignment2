@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 750,
+  "height": 320,
+  "title": {
+    "text": "Australian Food Export Values by Commodity and Year",
+    "subtitle": "Darker = higher export value in AUD millions",
+    "fontSize": 16,
+    "subtitleFontSize": 12
+  },
+  "data": {
+    "url": "data/abares_key_commodities_exports.csv"
+  },
+  "transform": [
+    {"filter": "datum.commodity != 'Total crops'"}
+  ],
+  "mark": {"type": "rect"},
+  "encoding": {
+    "x": {
+      "field": "financial_year",
+      "type": "ordinal",
+      "title": "Financial Year",
+      "axis": {"labelAngle": -45}
+    },
+    "y": {
+      "field": "commodity",
+      "type": "nominal",
+      "title": null,
+      "sort": "-x"
+    },
+    "color": {
+      "field": "value_aud_millions",
+      "type": "quantitative",
+      "title": "AUD Millions",
+      "scale": {"scheme": "oranges"}
+    },
+    "tooltip": [
+      {"field": "financial_year", "type": "ordinal", "title": "Year"},
+      {"field": "commodity", "type": "nominal", "title": "Commodity"},
+      {"field": "value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": ",.0f"}
+    ]
+  }
+}

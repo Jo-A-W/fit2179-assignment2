@@ -215,20 +215,19 @@
 
 		<hr class="divider">
 
-		<!-- SECTION 4 -->
-		<div class="section">
-			<p class="section-label">Regional Breakdown</p>
-			<h2>State by State</h2>
-			<p class="section-desc">
-				Different states specialise in different food products.
-				Western Australia leads in wheat, Queensland in beef,
-				and Tasmania in seafood.
-			</p>
-			<div class="chart-row">
-				<div class="chart-box" id="chart_aus_map"></div>
-				<div class="chart-box" id="chart_heatmap"></div>
-			</div>
-		</div>
+        <!-- SECTION 4 -->
+        <div class="section">
+            <p class="section-label">Regional Breakdown</p>
+            <h2>State by State</h2>
+            <p class="section-desc">
+                Different states specialise in different food products.
+                Western Australia leads in wheat, Queensland in beef,
+                and Tasmania in seafood.
+            </p>
+            <div class="chart-row">
+                <div class="chart-box" id="chart_heatmap"></div>
+            </div>
+        </div>
 
 		<hr class="divider">
 
@@ -291,6 +290,10 @@
             renderer: 'svg'
         }).catch(console.error);
         vegaEmbed('#chart_line_commodities', 'charts/line_commodities.json', {
+            actions: false,
+            renderer: 'svg'
+        }).catch(console.error);
+        vegaEmbed('#chart_heatmap', 'charts/heatmap.json', {
             actions: false,
             renderer: 'svg'
         }).catch(console.error);
