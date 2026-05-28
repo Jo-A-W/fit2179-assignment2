@@ -225,6 +225,9 @@
                 and Tasmania in seafood.
             </p>
             <div class="chart-row">
+                <div class="chart-box" id="chart_aus_map" style="display: flex; justify-content: center; align-items: center;"></div>
+            </div>
+            <div class="chart-row">
                 <div class="chart-box" id="chart_heatmap"></div>
             </div>
         </div>
@@ -258,6 +261,7 @@
 			<p>
 				<a href="https://www.dfat.gov.au/trade/trade-and-investment-data-information-and-publications/trade-statistics/trade-statistical-pivot-tables">DFAT Trade Statistics</a> |
 				<a href="https://www.agriculture.gov.au/abares/research-topics/agricultural-outlook/data">ABARES Agricultural Commodities</a>
+                <a href="https://www.abs.gov.au/statistics/industry/agriculture/value-agricultural-commodities-produced-australia/latest-release">ABS Agricultural Commodities</a>
 			</p>
 			<br>
 			<p>Author: Jordy Awangsaputra | FIT2179 Data Visualisation 2 | Monash University | 2026</p>
@@ -294,6 +298,10 @@
             renderer: 'svg'
         }).catch(console.error);
         vegaEmbed('#chart_heatmap', 'charts/heatmap.json', {
+            actions: false,
+            renderer: 'svg'
+        }).catch(console.error);
+        vegaEmbed('#chart_aus_map', 'charts/aus_bubble_map.json', {
             actions: false,
             renderer: 'svg'
         }).catch(console.error);

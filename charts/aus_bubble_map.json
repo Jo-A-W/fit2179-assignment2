@@ -1,0 +1,63 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 700,
+  "height": 600,
+  "title": {
+    "text": "Agricultural Production Value by State (2021-22)",
+    "subtitle": "Bubble size = gross value of food production in AUD millions — Source: ABS",
+    "fontSize": 16,
+    "subtitleFontSize": 12
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [133, -27],
+    "scale": 700
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/tonywr71/GeoJson-Data/master/australian-states.min.geojson",
+        "format": {"type": "json", "feature": "features"}
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f0e8d8",
+        "stroke": "#c8b89a",
+        "strokeWidth": 1.5
+      }
+    },
+    {
+      "data": {
+        "url": "data/australia_state_food_production.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.75,
+        "stroke": "#b35900",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "size": {
+          "field": "gross_value_aud_millions",
+          "type": "quantitative",
+          "title": "AUD Millions",
+          "scale": {"range": [200, 5000]},
+          "legend": {"format": ",.0f"}
+        },
+        "color": {
+          "field": "gross_value_aud_millions",
+          "type": "quantitative",
+          "scale": {"scheme": "oranges"},
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "gross_value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": ",.0f"}
+        ]
+      }
+    }
+  ]
+}
