@@ -1,57 +1,93 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "transparent",
-  "padding": {"left": 10, "right": 10, "top": 10, "bottom": 10},
   "width": 750,
-  "autosize": {"type": "fit", "contains": "padding"},  "height": 400,
+  "height": 380,
   "title": {
-    "text": "Top Australian Food Exports — Size vs Value (2024)",
-    "subtitle": "Bubble size = export value — hover to explore",
+    "text": "Australia's Food Trade Balance by Country",
+    "subtitle": "Exports (2024) vs Imports (2023) in AUD millions — surplus countries shaded right",
     "fontSize": 16,
     "subtitleFontSize": 12
   },
-  
   "data": {
-    "url": "data/food_exports_top_commodities_2024.csv"
+    "values": [
+      {"country": "China",        "exports": 15800,  "imports": 1324.8},
+      {"country": "Japan",        "exports": 5200,   "imports": 296.62},
+      {"country": "South Korea",  "exports": 3100,   "imports": 315.94},
+      {"country": "United States","exports": 2800,   "imports": 1407.01},
+      {"country": "Indonesia",    "exports": 2600,   "imports": 667.53},
+      {"country": "Vietnam",      "exports": 2100,   "imports": 360.53},
+      {"country": "Malaysia",     "exports": 1800,   "imports": 467.57},
+      {"country": "Thailand",     "exports": 1200,   "imports": 1276.5},
+      {"country": "United Kingdom","exports": 900,   "imports": 744.26},
+      {"country": "New Zealand",  "exports": 850,    "imports": 2080.41},
+      {"country": "Singapore",    "exports": 650,    "imports": 963.46}
+    ]
   },
   "transform": [
-	{"filter": "datum.commodity_clean != 'Beef, f.c.f.'"}
+    {
+      "fold": ["exports", "imports"],
+      "as": ["trade_type", "raw_value"]
+    },
+    {
+      "calculate": "datum.trade_type === 'imports' ? -datum.raw_value : datum.raw_value",
+      "as": "signed_value"
+    },
+    {
+      "calculate": "datum.trade_type === 'exports' ? 'Exports' : 'Imports'",
+      "as": "label"
+    }
   ],
-  "mark": {
-    "type": "circle",
-    "opacity": 0.75,
-    "stroke": "#b35900",
-    "strokeWidth": 1
-  },
-  "encoding": {
-    "x": {
-      "field": "value_aud_millions",
-      "type": "quantitative",
-      "title": "Export Value (AUD Millions)",
-      "axis": {"format": ",.0f"}
+  "layer": [
+    {
+      "mark": {"type": "bar", "opacity": 0.85},
+      "encoding": {
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "title": null,
+          "sort": {"field": "exports", "order": "ascending"}
+        },
+        "x": {
+          "field": "signed_value",
+          "type": "quantitative",
+          "title": "← Imports    AUD Millions    Exports →",
+          "axis": {
+            "format": ",.0f",
+            "labelExpr": "abs(datum.value)"
+          }
+        },
+        "color": {
+          "field": "label",
+          "type": "nominal",
+          "title": null,
+          "scale": {
+            "domain": ["Exports", "Imports"],
+            "range": ["#b35900", "#2a6496"]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "symbolType": "square"
+          }
+        },
+        "tooltip": [
+          {"field": "country", "type": "nominal", "title": "Country"},
+          {"field": "label", "type": "nominal", "title": "Type"},
+          {"field": "raw_value", "type": "quantitative", "title": "AUD Millions", "format": ",.0f"}
+        ]
+      }
     },
-    "y": {
-      "field": "commodity_clean",
-      "type": "nominal",
-      "title": null,
-      "sort": "-x"
-    },
-    "size": {
-      "field": "value_aud_millions",
-      "type": "quantitative",
-      "title": "AUD Millions",
-      "scale": {"range": [100, 3000]},
-      "legend": null
-    },
-    "color": {
-      "field": "value_aud_millions",
-      "type": "quantitative",
-      "scale": {"scheme": "oranges"},
-      "legend": null
-    },
-    "tooltip": [
-      {"field": "commodity_clean", "type": "nominal", "title": "Commodity"},
-      {"field": "value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": ",.0f"}
-    ]
-  }
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#2c1a0e",
+        "strokeWidth": 1.5,
+        "opacity": 0.4
+      },
+      "encoding": {
+        "x": {"datum": 0}
+      }
+    }
+  ]
 }

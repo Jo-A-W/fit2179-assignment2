@@ -41,12 +41,13 @@
       "axis": {"format": ",.0f"}
     },
     "color": {
-      "field": "commodity",
-      "type": "nominal",
-      "title": "Commodity",
-      "scale": {
-        "range": ["#b35900","#e07b2a","#f0a050","#7a3b00","#d4541a","#ffcc88","#c46d1e","#f5c07a","#5c2800","#e8a060"]
-      }
+    "field": "commodity",
+    "type": "nominal",
+    "title": "Commodity",
+    "scale": {
+        "domain": ["Wheat", "Barley", "Canola", "Cotton", "Sugar", "Wine", "Fruit", "Tree nuts", "Vegetables"],
+        "range": ["#e6194b", "#3cb44b", "#4363d8", "#f58231", "#911eb4", "#42d4f4", "#f032e6", "#bfef45", "#a9a9a9"]
+    }
     },
     "opacity": {
       "condition": {"param": "commodity_select", "value": 1},

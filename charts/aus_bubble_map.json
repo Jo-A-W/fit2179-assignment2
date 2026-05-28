@@ -45,7 +45,11 @@
           "type": "quantitative",
           "title": "AUD Millions",
           "scale": {"range": [200, 5000]},
-          "legend": {"format": ",.0f"}
+          "legend": {
+            "title": "AUD Millions",
+            "orient": "bottom-right",
+            "values": [500, 5000, 10000, 17000]
+          }
         },
         "color": {
           "field": "gross_value_aud_millions",
@@ -57,6 +61,47 @@
           {"field": "state", "type": "nominal", "title": "State"},
           {"field": "gross_value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": ",.0f"}
         ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/australia_state_food_production.csv"
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#000000",
+        "dy": -22,
+        "align": "center"
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "state", "type": "nominal"}
+      }
+    },
+    {
+      "data": {
+        "url": "data/australia_state_food_production.csv"
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "fontStyle": "italic",
+        "color": "#8B0000",
+        "dy": -10,
+        "align": "center"
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {
+          "field": "gross_value_aud_millions",
+          "type": "quantitative",
+          "format": "$,.0f"
+        }
       }
     }
   ]
