@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 280,
+  "height": 300,
+  "title": {
+    "text": "Australia's Agricultural Production by Commodity (2024-25)",
+    "subtitle": "Gross value in AUD millions — Source: ABARES",
+    "fontSize": 16,
+    "subtitleFontSize": 12
+  },
+  "data": {
+    "url": "data/abares_production_latest_year.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "color": "#b35900"
+  },
+  "encoding": {
+    "y": {
+      "field": "commodity",
+      "type": "nominal",
+      "title": null,
+      "sort": "-x"
+    },
+    "x": {
+      "field": "value_aud_millions",
+      "type": "quantitative",
+      "title": "AUD Millions",
+      "axis": {"format": ",.0f"}
+    },
+    "color": {
+      "field": "value_aud_millions",
+      "type": "quantitative",
+      "scale": {"scheme": "oranges"},
+      "legend": null
+    },
+    "tooltip": [
+      {"field": "commodity", "type": "nominal", "title": "Commodity"},
+      {"field": "value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": ",.0f"}
+    ]
+  }
+}

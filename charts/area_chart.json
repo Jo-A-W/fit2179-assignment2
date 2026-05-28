@@ -32,7 +32,8 @@
       "type": "nominal",
       "title": "Category",
       "scale": {
-        "range": ["#b35900","#e07b2a","#f0a050","#f5c07a","#7a3b00","#d4541a","#ffcc88","#c46d1e"]
+        "domain": ["Meat & Livestock", "Grains & Cereals", "Beverages", "Fruit & Vegetables", "Dairy & Eggs", "Sugar & Confectionery", "Seafood", "Other Food"],
+        "range": ["#c0392b", "#2980b9", "#f39c12", "#27ae60", "#8e44ad", "#e67e22", "#16a085", "#7f8c8d"]
       }
     },
     "tooltip": [

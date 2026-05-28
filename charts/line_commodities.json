@@ -12,6 +12,9 @@
   "data": {
     "url": "data/abares_key_commodities_exports.csv"
   },
+  "transform": [
+	{"filter": "datum.commodity != 'Total crops'"}
+  ],
   "params": [
     {
       "name": "commodity_select",

@@ -1,21 +1,25 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "transparent",
-  "width": 800,
-  "height": 400,
+  "width": 900,
+  "height": 450,
   "title": {
     "text": "Where Australia Sends Its Food (2024)",
     "subtitle": "Darker = higher export value in AUD millions",
     "fontSize": 16,
     "subtitleFontSize": 12
   },
-  "projection": {"type": "naturalEarth1"},
+  "projection": {
+    "type": "naturalEarth1",
+    "clipExtent": [[0, 0], [900, 450]]
+  },
   "layer": [
     {
       "data": {
         "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
         "format": {"type": "topojson", "feature": "countries"}
       },
+      "transform": [{"filter": "datum.id != 10"}],
       "mark": {"type": "geoshape", "fill": "#e8e8e8", "stroke": "white", "strokeWidth": 0.5}
     },
     {
@@ -46,6 +50,29 @@
           {"field": "country", "type": "nominal", "title": "Country"},
           {"field": "export_value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": ",.0f"}
         ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"country": "China", "label": "🇨🇳 China\n$15.8B", "latitude": 35.9, "longitude": 104.2},
+          {"country": "Japan", "label": "🇯🇵 Japan\n$5.2B", "latitude": 40.0, "longitude": 138.3},
+          {"country": "USA", "label": "🇺🇸 USA\n$2.8B", "latitude": 42.0, "longitude": -100.0},
+          {"country": "Indonesia", "label": "🇮🇩 Indonesia\n$2.6B", "latitude": -5.0, "longitude": 117.0}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "color": "#333",
+        "align": "left",
+        "dy": -10
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "label", "type": "nominal"}
       }
     }
   ]

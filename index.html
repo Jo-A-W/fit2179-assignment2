@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Australia's Food Trade Story</title>
@@ -11,12 +11,9 @@
 	<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-	<!-- Basic styling -->
     <style>
-        /* ── Google Font ── */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-        /* ── Reset & Base ── */
         * {
             margin: 0;
             padding: 0;
@@ -31,101 +28,107 @@
             line-height: 1.7;
         }
 
-        /* ── Hero Header ── */
         .hero {
             background: linear-gradient(135deg, #7a3000 0%, #b35900 60%, #e07b2a 100%);
             color: white;
             text-align: center;
-            padding: 80px 40px;
-            margin-bottom: 60px;
+            padding: 100px 40px;
+            margin-bottom: 80px;
         }
 
         .hero h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 16px;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
         }
 
         .hero p {
-            font-size: 1.2em;
+            font-size: 1.25em;
             font-weight: 300;
-            opacity: 0.9;
+            opacity: 0.85;
             max-width: 600px;
             margin: 0 auto;
         }
 
-        /* ── Page Container ── */
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 30px;
+            padding: 0 40px;
         }
 
-        /* ── Section Headings ── */
         .section {
-            margin-bottom: 70px;
+            margin-bottom: 80px;
         }
 
         .section-label {
-            font-size: 0.75em;
-            font-weight: 600;
-            letter-spacing: 2px;
+            font-size: 0.7em;
+            font-weight: 700;
+            letter-spacing: 3px;
             text-transform: uppercase;
             color: #b35900;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         h2 {
-            font-size: 2em;
+            font-size: 2.2em;
             font-weight: 700;
             color: #1a1a1a;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             letter-spacing: -0.5px;
         }
 
         .section-desc {
             font-size: 1.05em;
-            color: #555;
+            color: #666;
             font-weight: 400;
-            max-width: 750px;
-            margin-bottom: 30px;
-            line-height: 1.8;
+            max-width: 800px;
+            margin-bottom: 32px;
+            line-height: 1.9;
         }
 
-        /* ── Chart Cards ── */
         .chart-row {
             display: flex;
-            gap: 24px;
+            gap: 20px;
             flex-wrap: wrap;
-            margin-top: 24px;
+            margin-top: 20px;
         }
 
         .chart-box {
             flex: 1;
-            min-width: 300px;
+            min-width: 320px;
             background-color: #ffffff;
-            border: 1px solid #e8e0d8;
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            border: 1px solid #ede5da;
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
         }
 
-        /* ── Divider ── */
+        .chart-box-full {
+            width: 100%;
+            background-color: #ffffff;
+            border: 1px solid #ede5da;
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
         .divider {
             border: none;
-            border-top: 1px solid #e0d8d0;
-            margin: 60px 0;
+            border-top: 1px solid #e5ddd4;
+            margin: 70px 0;
         }
 
-        /* ── Footer ── */
         footer {
             background-color: #1a1a1a;
-            color: #aaa;
-            padding: 40px 30px;
-            margin-top: 80px;
+            color: #999;
+            padding: 50px 40px;
+            margin-top: 100px;
             font-size: 0.85em;
-            line-height: 1.8;
+            line-height: 2;
         }
 
         footer a {
@@ -138,7 +141,7 @@
         }
 
         footer .footer-inner {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -146,6 +149,7 @@
             color: white;
             font-size: 1em;
             margin-bottom: 12px;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -177,45 +181,25 @@
 
 		<hr class="divider">
 
-		<!-- SECTION 2 -->
-		<div class="section">
-			<p class="section-label">Exports</p>
-			<h2>What Australia Exports</h2>
-			<p class="section-desc">
-				From beef to wheat, Australia exports a wide variety of food products
-				to markets across Asia, the Middle East, and beyond.
-			</p>
-			<div class="chart-row">
-				<div class="chart-box" id="chart_export_bar"></div>
-				<div class="chart-box" id="chart_donut2"></div>
-			</div>
+        <!-- SECTION 2 -->
+        <div class="section">
+            <p class="section-label">Exports</p>
+            <h2>What Australia Exports</h2>
+            <p class="section-desc">
+                From beef to wheat, Australia exports a wide variety of food products
+                to markets across Asia, the Middle East, and beyond.
+            </p>
             <div class="chart-row">
-                <div class="chart-box" id="chart_area"></div>
+                <div class="chart-box" id="chart_export_bar"></div>
+                <div class="chart-box" id="chart_bar_production"></div>
             </div>
-			<div class="chart-row">
-				<div class="chart-box" id="chart_world_export_map"></div>
-			</div>
-		</div>
+            <div class="chart-box-full" id="chart_area"></div>
+            <div class="chart-box-full" id="chart_world_export_map"></div>
+        </div>
 
 		<hr class="divider">
 
-		<!-- SECTION 3 -->
-		<div class="section">
-			<p class="section-label">Imports</p>
-			<h2>What Australia Imports</h2>
-			<p class="section-desc">
-				Despite being a major food producer, Australia still imports
-				significant amounts of food from around the world.
-			</p>
-			<div class="chart-row">
-				<div class="chart-box" id="chart_import_bar"></div>
-				<div class="chart-box" id="chart_world_import_map"></div>
-			</div>
-		</div>
-
-		<hr class="divider">
-
-        <!-- SECTION 4 -->
+        <!-- SECTION 3 -->
         <div class="section">
             <p class="section-label">Regional Breakdown</p>
             <h2>State by State</h2>
@@ -224,33 +208,24 @@
                 Western Australia leads in wheat, Queensland in beef,
                 and Tasmania in seafood.
             </p>
-            <div class="chart-row">
-                <div class="chart-box" id="chart_aus_map" style="display: flex; justify-content: center; align-items: center;"></div>
-            </div>
-            <div class="chart-row">
-                <div class="chart-box" id="chart_heatmap"></div>
-            </div>
+            <div class="chart-box-full" id="chart_aus_map" style="display: flex; justify-content: center; align-items: center;"></div>
+            <div class="chart-box-full" id="chart_heatmap"></div>
         </div>
 
-		<hr class="divider">
+        <hr class="divider">
 
-		<!-- SECTION 5 -->
-		<div class="section">
-			<p class="section-label">Trends</p>
-			<h2>How Trade Has Shifted Over Time</h2>
-			<p class="section-desc">
-				Australia's trading relationships have shifted significantly
-				over the past two decades. China has grown to become
-				Australia's largest food export market.
-			</p>
-			<div class="chart-row">
-				<div class="chart-box" id="chart_slope"></div>
-				<div class="chart-box" id="chart_bubble"></div>
-			</div>
-            <div class="chart-row">
-                <div class="chart-box" id="chart_line_commodities"></div>
-            </div>
-		</div>
+        <!-- SECTION 4 -->
+        <div class="section">
+            <p class="section-label">Trends</p>
+            <h2>How Trade Has Shifted Over Time</h2>
+            <p class="section-desc">
+                Australia's trading relationships have shifted significantly
+                over the past two decades. China has grown to become
+                Australia's largest food export market.
+            </p>
+            <div class="chart-box-full" id="chart_bubble"></div>
+            <div class="chart-box-full" id="chart_line_commodities"></div>
+        </div>
 
 	</div>
 
@@ -260,8 +235,9 @@
 			<h3>Data Sources</h3>
 			<p>
 				<a href="https://www.dfat.gov.au/trade/trade-and-investment-data-information-and-publications/trade-statistics/trade-statistical-pivot-tables">DFAT Trade Statistics</a> |
-				<a href="https://www.agriculture.gov.au/abares/research-topics/agricultural-outlook/data">ABARES Agricultural Commodities</a>
-                <a href="https://www.abs.gov.au/statistics/industry/agriculture/value-agricultural-commodities-produced-australia/latest-release">ABS Agricultural Commodities</a>
+				<a href="https://www.agriculture.gov.au/abares/research-topics/agricultural-outlook/data">ABARES Agricultural Commodities</a> |
+				<a href="https://www.abs.gov.au/statistics/industry/agriculture/value-agricultural-commodities-produced-australia/latest-release">ABS Value of Agricultural Commodities</a> |
+				<a href="https://wits.worldbank.org">World Bank WITS</a>
 			</p>
 			<br>
 			<p>Author: Jordy Awangsaputra | FIT2179 Data Visualisation 2 | Monash University | 2026</p>
@@ -285,26 +261,40 @@
 			renderer: 'svg'
 		}).catch(console.error);
 
+		vegaEmbed('#chart_bar_production', 'charts/bar_production.json', {
+			actions: false,
+			renderer: 'svg'
+		}).catch(console.error);
+
+		vegaEmbed('#chart_area', 'charts/area_chart.json', {
+			actions: false,
+			renderer: 'svg'
+		}).catch(console.error);
+
 		vegaEmbed('#chart_world_export_map', 'charts/world_map.json', {
 			actions: false,
 			renderer: 'svg'
 		}).catch(console.error);
-        vegaEmbed('#chart_area', 'charts/area_chart.json', {
-            actions: false,
-            renderer: 'svg'
-        }).catch(console.error);
-        vegaEmbed('#chart_line_commodities', 'charts/line_commodities.json', {
-            actions: false,
-            renderer: 'svg'
-        }).catch(console.error);
-        vegaEmbed('#chart_heatmap', 'charts/heatmap.json', {
-            actions: false,
-            renderer: 'svg'
-        }).catch(console.error);
-        vegaEmbed('#chart_aus_map', 'charts/aus_bubble_map.json', {
-            actions: false,
-            renderer: 'svg'
-        }).catch(console.error);
+
+		vegaEmbed('#chart_aus_map', 'charts/aus_bubble_map.json', {
+			actions: false,
+			renderer: 'svg'
+		}).catch(console.error);
+
+		vegaEmbed('#chart_heatmap', 'charts/heatmap.json', {
+			actions: false,
+			renderer: 'svg'
+		}).catch(console.error);
+
+		vegaEmbed('#chart_bubble', 'charts/bubble_chart.json', {
+			actions: false,
+			renderer: 'svg'
+		}).catch(console.error);
+
+		vegaEmbed('#chart_line_commodities', 'charts/line_commodities.json', {
+			actions: false,
+			renderer: 'svg'
+		}).catch(console.error);
 	</script>
 
 </body>

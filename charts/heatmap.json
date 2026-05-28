@@ -1,8 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "transparent",
-  "width": 750,
-  "height": 320,
+  "padding": {"left": 10, "right": 10, "top": 10, "bottom": 10},
+  "width": 900,
+  "autosize": {"type": "fit", "contains": "padding"},  "height": 320,
   "title": {
     "text": "Australian Food Export Values by Commodity and Year",
     "subtitle": "Darker = higher export value in AUD millions",
