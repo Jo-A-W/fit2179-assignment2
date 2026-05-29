@@ -392,7 +392,48 @@
         }
 
         .vega-bind input[type="range"] {
-            accent-color: #b35900;
+            -webkit-appearance: none;
+            appearance: none;
+            width: 180px;
+            height: 4px;
+            border-radius: 2px;
+            background: linear-gradient(to right, #b35900, #f0a050);
+            outline: none;
+            cursor: pointer;
+        }
+
+        .vega-bind input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #b35900;
+            border: 3px solid #faf6f0;
+            box-shadow: 0 0 0 2px #b35900;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .vega-bind input[type="range"]::-webkit-slider-thumb:hover {
+            background: #e07b2a;
+            transform: scale(1.2);
+        }
+
+        .vega-bind input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #b35900;
+            border: 3px solid #faf6f0;
+            box-shadow: 0 0 0 2px #b35900;
+            cursor: pointer;
+        }
+
+        .vega-bind input[type="range"]::-moz-range-track {
+            height: 4px;
+            border-radius: 2px;
+            background: linear-gradient(to right, #b35900, #f0a050);
         }
 
         footer h3 {
@@ -587,12 +628,6 @@
                     and wine from New Zealand crossing the Tasman. <strong>Singapore</strong> similarly sells more food
                     to Australia ($963M) than it buys ($650M), primarily through processed and packaged goods.</p>
             </div>
-            <span class="interactive-hint">Interactive — click a region in the legend to highlight that group</span>
-            <div class="chart-box-full" id="chart_scatter"></div>
-            <p class="chart-annotation">Scatter plot combining export and import data. Each bubble represents one
-                trading partner. Bubbles <strong>below the dashed line</strong> are countries Australia runs a trade
-                surplus with (it exports more than it imports). Bubbles <strong>above the line</strong> are deficit
-                partners. Use the legend to filter by region. Triangles (&#9650;) indicate deficit partners.</p>
             <span class="interactive-hint">Interactive — click a commodity in the legend to isolate it</span>
             <div class="chart-box-full" id="chart_line_commodities"></div>
             <p class="chart-annotation">Multi-line chart showing individual commodity export trends since 2005–06. Click
@@ -644,10 +679,10 @@
         vegaEmbed('#chart_world_export_map', 'charts/world_map.json', OPTS).catch(console.error);
         vegaEmbed('#chart_aus_map', 'charts/aus_bubble_map.json', OPTS).catch(console.error);
         vegaEmbed('#chart_heatmap', 'charts/heatmap.json', OPTS).catch(console.error);
-        vegaEmbed('#chart_bubble', 'charts/bubble_chart.json', OPTS).catch(console.error);
+        vegaEmbed('#chart_bubble', 'charts/diverging_bar.json', OPTS).catch(console.error);
         vegaEmbed('#chart_scatter', 'charts/scatter_trade_balance.json', OPTS).catch(console.error);
         vegaEmbed('#chart_line_commodities', 'charts/line_commodities.json', OPTS).catch(console.error);
     </script>
 </body>
 
-</html> 
+</html>

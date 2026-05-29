@@ -16,7 +16,7 @@
   },
   "transform": [
     {"filter": "datum.commodity != 'Total crops'"},
-    {"filter": "datum.financial_year >= '2010-11'"}
+    {"filter": "datum.financial_year >= '2010–11'"}
   ],
   "layer": [
     {

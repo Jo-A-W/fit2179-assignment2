@@ -28,23 +28,67 @@
   "transform": [
     {"filter": "datum.year == year_select"}
   ],
-  "mark": {"type": "arc", "innerRadius": 85, "outerRadius": 140},
-  "encoding": {
-    "theta": {
-      "field": "value_aud_millions",
-      "type": "quantitative"
-    },
-    "color": {
-      "field": "category",
-      "type": "nominal",
-      "title": "Category",
-      "scale": {
-        "range": ["#b35900","#e07b2a","#f0a050","#f5c07a","#7a3b00","#d4541a","#ffcc88","#c46d1e"]
+  "layer": [
+    {
+      "mark": {"type": "arc", "innerRadius": 85, "outerRadius": 140},
+      "encoding": {
+        "theta": {
+          "field": "value_aud_millions",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "title": "Category",
+          "scale": {
+            "domain": ["Meat & Livestock", "Grains & Cereals", "Beverages", "Fruit & Vegetables", "Dairy & Eggs", "Sugar & Confectionery", "Seafood", "Other Food"],
+            "range": ["#c0392b", "#2980b9", "#f39c12", "#27ae60", "#8e44ad", "#e67e22", "#16a085", "#7f8c8d"]
+          }
+        },
+        "tooltip": [
+          {"field": "category", "type": "nominal", "title": "Category"},
+          {"field": "value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": "$,.0f"}
+        ]
       }
     },
-    "tooltip": [
-      {"field": "category", "type": "nominal", "title": "Category"},
-      {"field": "value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": "$,.0f"}
-    ]
-  }
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#8a6a4a",
+        "dy": -10,
+        "font": "Inter, sans-serif"
+      },
+      "encoding": {
+        "text": {"value": "Total"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 18,
+        "fontWeight": "bold",
+        "color": "#b35900",
+        "dy": 10,
+        "font": "Playfair Display, serif"
+      },
+      "transform": [
+        {
+          "aggregate": [{"op": "sum", "field": "value_aud_millions", "as": "total"}]
+        },
+        {
+          "calculate": "'$' + format(datum.total / 1000, '.1f') + 'B'",
+          "as": "total_label"
+        }
+      ],
+      "encoding": {
+        "text": {"field": "total_label", "type": "nominal"}
+      }
+    }
+  ]
 }

@@ -52,8 +52,8 @@
     {
       "data": {
         "values": [
-          {"year": "2020", "label": "COVID-19\ndisruption", "y": 40430},
-          {"year": "2025", "label": "Record\n$66.7B", "y": 66661}
+          {"year": "2020", "label": ["COVID-19", "disruption"], "y": 40430},
+          {"year": "2025", "label": ["Record", "$66.7B"], "y": 66661}
         ]
       },
       "layer": [
