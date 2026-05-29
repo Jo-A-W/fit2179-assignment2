@@ -12,6 +12,24 @@
   "data": {
     "url": "data/abares_production_latest_year.csv"
   },
+  "params": [
+    {
+      "name": "sort_order",
+      "value": -1,
+      "bind": {
+        "input": "select",
+        "options": [-1, 1],
+        "labels": ["Highest first", "Lowest first"],
+        "name": "Sort: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "datum.value_aud_millions * sort_order",
+      "as": "sort_val"
+    }
+  ],
   "layer": [
     {
       "mark": {"type": "bar"},
@@ -20,7 +38,7 @@
           "field": "commodity",
           "type": "nominal",
           "title": null,
-          "sort": "-x"
+          "sort": {"field": "sort_val", "order": "ascending"}
         },
         "x": {
           "field": "value_aud_millions",
@@ -49,7 +67,11 @@
         "color": "#5a3e2b"
       },
       "encoding": {
-        "y": {"field": "commodity", "type": "nominal", "sort": "-x"},
+        "y": {
+          "field": "commodity",
+          "type": "nominal",
+          "sort": {"field": "sort_val", "order": "ascending"}
+        },
         "x": {"field": "value_aud_millions", "type": "quantitative"},
         "text": {"field": "value_aud_millions", "type": "quantitative", "format": "$,.0f"}
       }

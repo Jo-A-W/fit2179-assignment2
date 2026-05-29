@@ -5,7 +5,7 @@
   "height": 350,
   "title": {
     "text": "Key Australian Food Exports Over Time",
-    "subtitle": "Value in AUD millions — click a commodity in the legend to highlight it",
+    "subtitle": "Value in AUD millions",
     "fontSize": 16,
     "subtitleFontSize": 12
   },
@@ -18,13 +18,6 @@
     },
     {
       "filter": "datum.financial_year >= '2005–06'"
-    }
-  ],
-  "params": [
-    {
-      "name": "commodity_select",
-      "select": {"type": "point", "fields": ["commodity"]},
-      "bind": "legend"
     }
   ],
   "layer": [
@@ -55,14 +48,6 @@
             "domain": ["Wheat", "Barley", "Canola", "Cotton", "Sugar", "Wine", "Fruit", "Tree nuts", "Vegetables"],
             "range": ["#e6194b", "#3cb44b", "#4363d8", "#f58231", "#911eb4", "#42d4f4", "#f032e6", "#bfef45", "#a9a9a9"]
           }
-        },
-        "opacity": {
-          "condition": {"param": "commodity_select", "value": 1},
-          "value": 0.1
-        },
-        "strokeWidth": {
-          "condition": {"param": "commodity_select", "value": 3},
-          "value": 1.5
         },
         "tooltip": [
           {"field": "financial_year", "type": "ordinal", "title": "Year"},
