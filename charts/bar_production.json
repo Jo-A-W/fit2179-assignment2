@@ -4,7 +4,7 @@
   "width": 280,
   "height": 300,
   "title": {
-    "text": "Australia's Agricultural Production by Commodity (2024-25)",
+    "text": "Agricultural Production by Commodity (2024–25)",
     "subtitle": "Gross value in AUD millions — Source: ABARES",
     "fontSize": 16,
     "subtitleFontSize": 12
@@ -12,32 +12,47 @@
   "data": {
     "url": "data/abares_production_latest_year.csv"
   },
-  "mark": {
-    "type": "bar",
-    "color": "#b35900"
-  },
-  "encoding": {
-    "y": {
-      "field": "commodity",
-      "type": "nominal",
-      "title": null,
-      "sort": "-x"
+  "layer": [
+    {
+      "mark": {"type": "bar"},
+      "encoding": {
+        "y": {
+          "field": "commodity",
+          "type": "nominal",
+          "title": null,
+          "sort": "-x"
+        },
+        "x": {
+          "field": "value_aud_millions",
+          "type": "quantitative",
+          "title": "AUD Millions",
+          "axis": {"format": ",.0f"}
+        },
+        "color": {
+          "field": "value_aud_millions",
+          "type": "quantitative",
+          "scale": {"scheme": "oranges"},
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "commodity", "type": "nominal", "title": "Commodity"},
+          {"field": "value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": "$,.0f"}
+        ]
+      }
     },
-    "x": {
-      "field": "value_aud_millions",
-      "type": "quantitative",
-      "title": "AUD Millions",
-      "axis": {"format": ",.0f"}
-    },
-    "color": {
-      "field": "value_aud_millions",
-      "type": "quantitative",
-      "scale": {"scheme": "oranges"},
-      "legend": null
-    },
-    "tooltip": [
-      {"field": "commodity", "type": "nominal", "title": "Commodity"},
-      {"field": "value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": ",.0f"}
-    ]
-  }
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "fontSize": 10,
+        "color": "#5a3e2b"
+      },
+      "encoding": {
+        "y": {"field": "commodity", "type": "nominal", "sort": "-x"},
+        "x": {"field": "value_aud_millions", "type": "quantitative"},
+        "text": {"field": "value_aud_millions", "type": "quantitative", "format": "$,.0f"}
+      }
+    }
+  ]
 }

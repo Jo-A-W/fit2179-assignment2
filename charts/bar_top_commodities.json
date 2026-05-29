@@ -5,33 +5,65 @@
   "height": 400,
   "title": {
     "text": "Top 15 Australian Food Exports (2024)",
-    "subtitle": "Value in AUD millions",
+    "subtitle": "Value in AUD millions — hover for details",
     "fontSize": 16,
     "subtitleFontSize": 12
   },
   "data": {
     "url": "data/food_exports_top_commodities_2024.csv"
   },
-  "mark": {
-    "type": "bar",
-    "color": "#b35900"
-  },
-  "encoding": {
-    "y": {
-      "field": "commodity_clean",
-      "type": "nominal",
-      "title": null,
-      "sort": "-x"
+  "layer": [
+    {
+      "mark": {"type": "bar"},
+      "encoding": {
+        "y": {
+          "field": "commodity_clean",
+          "type": "nominal",
+          "title": null,
+          "sort": "-x"
+        },
+        "x": {
+          "field": "value_aud_millions",
+          "type": "quantitative",
+          "title": "AUD Millions",
+          "axis": {"format": ",.0f"}
+        },
+        "color": {
+          "field": "value_aud_millions",
+          "type": "quantitative",
+          "scale": {"scheme": "oranges"},
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "commodity_clean", "type": "nominal", "title": "Commodity"},
+          {"field": "value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": "$,.0f"}
+        ]
+      }
     },
-    "x": {
-      "field": "value_aud_millions",
-      "type": "quantitative",
-      "title": "AUD Millions",
-      "axis": {"format": ",.0f"}
-    },
-    "tooltip": [
-      {"field": "commodity_clean", "type": "nominal", "title": "Commodity"},
-      {"field": "value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": ",.0f"}
-    ]
-  }
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "fontSize": 10,
+        "color": "#5a3e2b"
+      },
+      "encoding": {
+        "y": {
+          "field": "commodity_clean",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "x": {
+          "field": "value_aud_millions",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "value_aud_millions",
+          "type": "quantitative",
+          "format": "$,.0f"
+        }
+      }
+    }
+  ]
 }

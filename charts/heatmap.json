@@ -3,10 +3,11 @@
   "background": "transparent",
   "padding": {"left": 10, "right": 10, "top": 10, "bottom": 10},
   "width": 900,
-  "autosize": {"type": "fit", "contains": "padding"},  "height": 320,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "height": 320,
   "title": {
     "text": "Australian Food Export Values by Commodity and Year",
-    "subtitle": "Darker = higher export value in AUD millions",
+    "subtitle": "Darker = higher export value in AUD millions — hover for exact values",
     "fontSize": 16,
     "subtitleFontSize": 12
   },
@@ -14,32 +15,67 @@
     "url": "data/abares_key_commodities_exports.csv"
   },
   "transform": [
-    {"filter": "datum.commodity != 'Total crops'"}
+    {"filter": "datum.commodity != 'Total crops'"},
+    {"filter": "datum.financial_year >= '2010'"}
   ],
-  "mark": {"type": "rect"},
-  "encoding": {
-    "x": {
-      "field": "financial_year",
-      "type": "ordinal",
-      "title": "Financial Year",
-      "axis": {"labelAngle": -45}
+  "layer": [
+    {
+      "mark": {"type": "rect"},
+      "encoding": {
+        "x": {
+          "field": "financial_year",
+          "type": "ordinal",
+          "title": "Financial Year",
+          "axis": {"labelAngle": -45}
+        },
+        "y": {
+          "field": "commodity",
+          "type": "nominal",
+          "title": null,
+          "sort": {"field": "value_aud_millions", "op": "max", "order": "descending"}
+        },
+        "color": {
+          "field": "value_aud_millions",
+          "type": "quantitative",
+          "title": "AUD Millions",
+          "scale": {"scheme": "oranges"}
+        },
+        "tooltip": [
+          {"field": "financial_year", "type": "ordinal", "title": "Year"},
+          {"field": "commodity", "type": "nominal", "title": "Commodity"},
+          {"field": "value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": "$,.0f"}
+        ]
+      }
     },
-    "y": {
-      "field": "commodity",
-      "type": "nominal",
-      "title": null,
-      "sort": "-x"
-    },
-    "color": {
-      "field": "value_aud_millions",
-      "type": "quantitative",
-      "title": "AUD Millions",
-      "scale": {"scheme": "oranges"}
-    },
-    "tooltip": [
-      {"field": "financial_year", "type": "ordinal", "title": "Year"},
-      {"field": "commodity", "type": "nominal", "title": "Commodity"},
-      {"field": "value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": ",.0f"}
-    ]
-  }
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 8,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "field": "financial_year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "commodity",
+          "type": "nominal",
+          "sort": {"field": "value_aud_millions", "op": "max", "order": "descending"}
+        },
+        "text": {
+          "field": "value_aud_millions",
+          "type": "quantitative",
+          "format": ".0f"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.value_aud_millions > 8000",
+            "value": "white"
+          },
+          "value": "#2c1a0e"
+        }
+      }
+    }
+  ]
 }

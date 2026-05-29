@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "transparent",
-  "width": 700,
+  "width": 1050,
   "height": 600,
-  "title": {
+  "autosize": {"type": "fit", "contains": "padding"},  "title": {
     "text": "Agricultural Production Value by State (2021-22)",
     "subtitle": "Bubble size = gross value of food production in AUD millions — Source: ABS",
     "fontSize": 16,
@@ -12,7 +12,7 @@
   "projection": {
     "type": "mercator",
     "center": [133, -27],
-    "scale": 700
+    "scale": 750
   },
   "layer": [
     {

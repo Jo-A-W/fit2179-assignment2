@@ -5,7 +5,7 @@
   "height": 350,
   "title": {
     "text": "Key Australian Food Exports Over Time",
-    "subtitle": "Value in AUD millions — click a category to highlight",
+    "subtitle": "Value in AUD millions — click a commodity in the legend to highlight it",
     "fontSize": 16,
     "subtitleFontSize": 12
   },
@@ -13,7 +13,12 @@
     "url": "data/abares_key_commodities_exports.csv"
   },
   "transform": [
-	{"filter": "datum.commodity != 'Total crops'"}
+    {
+      "filter": "datum.commodity != 'Total crops'"
+    },
+    {
+      "filter": "datum.financial_year >= '2005–06'"
+    }
   ],
   "params": [
     {
@@ -22,41 +27,70 @@
       "bind": "legend"
     }
   ],
-  "mark": {
-    "type": "line",
-    "point": true,
-    "strokeWidth": 2.5
-  },
-  "encoding": {
-    "x": {
-      "field": "financial_year",
-      "type": "ordinal",
-      "title": "Financial Year",
-      "axis": {"labelAngle": -45}
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": true,
+        "strokeWidth": 2.5
+      },
+      "encoding": {
+        "x": {
+          "field": "financial_year",
+          "type": "ordinal",
+          "title": "Financial Year",
+          "axis": {"labelAngle": -45}
+        },
+        "y": {
+          "field": "value_aud_millions",
+          "type": "quantitative",
+          "title": "AUD Millions",
+          "axis": {"format": ",.0f"}
+        },
+        "color": {
+          "field": "commodity",
+          "type": "nominal",
+          "title": "Commodity",
+          "scale": {
+            "domain": ["Wheat", "Barley", "Canola", "Cotton", "Sugar", "Wine", "Fruit", "Tree nuts", "Vegetables"],
+            "range": ["#e6194b", "#3cb44b", "#4363d8", "#f58231", "#911eb4", "#42d4f4", "#f032e6", "#bfef45", "#a9a9a9"]
+          }
+        },
+        "opacity": {
+          "condition": {"param": "commodity_select", "value": 1},
+          "value": 0.1
+        },
+        "strokeWidth": {
+          "condition": {"param": "commodity_select", "value": 3},
+          "value": 1.5
+        },
+        "tooltip": [
+          {"field": "financial_year", "type": "ordinal", "title": "Year"},
+          {"field": "commodity", "type": "nominal", "title": "Commodity"},
+          {"field": "value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": "$,.0f"}
+        ]
+      }
     },
-    "y": {
-      "field": "value_aud_millions",
-      "type": "quantitative",
-      "title": "AUD Millions",
-      "axis": {"format": ",.0f"}
-    },
-    "color": {
-    "field": "commodity",
-    "type": "nominal",
-    "title": "Commodity",
-    "scale": {
-        "domain": ["Wheat", "Barley", "Canola", "Cotton", "Sugar", "Wine", "Fruit", "Tree nuts", "Vegetables"],
-        "range": ["#e6194b", "#3cb44b", "#4363d8", "#f58231", "#911eb4", "#42d4f4", "#f032e6", "#bfef45", "#a9a9a9"]
+    {
+      "data": {
+        "values": [
+          {"financial_year": "2022–23", "value_aud_millions": 16738, "label": "↑ Record wheat $16.7B"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "color": "#e6194b",
+        "align": "left",
+        "dx": 6,
+        "dy": -8
+      },
+      "encoding": {
+        "x": {"field": "financial_year", "type": "ordinal"},
+        "y": {"field": "value_aud_millions", "type": "quantitative"},
+        "text": {"field": "label", "type": "nominal"}
+      }
     }
-    },
-    "opacity": {
-      "condition": {"param": "commodity_select", "value": 1},
-      "value": 0.15
-    },
-    "tooltip": [
-      {"field": "financial_year", "type": "ordinal", "title": "Year"},
-      {"field": "commodity", "type": "nominal", "title": "Commodity"},
-      {"field": "value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": ",.0f"}
-    ]
-  }
+  ]
 }

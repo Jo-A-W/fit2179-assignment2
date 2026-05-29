@@ -55,24 +55,76 @@
     {
       "data": {
         "values": [
-          {"country": "China", "label": "🇨🇳 China\n$15.8B", "latitude": 35.9, "longitude": 104.2},
-          {"country": "Japan", "label": "🇯🇵 Japan\n$5.2B", "latitude": 40.0, "longitude": 138.3},
-          {"country": "USA", "label": "🇺🇸 USA\n$2.8B", "latitude": 42.0, "longitude": -100.0},
-          {"country": "Indonesia", "label": "🇮🇩 Indonesia\n$2.6B", "latitude": -5.0, "longitude": 117.0}
+          {"country": "China",     "value": "$15.8B", "latitude": 48,  "longitude": 105,  "name_length": 5},
+          {"country": "Japan",     "value": "$5.2B",  "latitude": 42,  "longitude": 148,  "name_length": 5},
+          {"country": "USA",       "value": "$2.8B",  "latitude": 53,  "longitude": -100, "name_length": 3},
+          {"country": "Indonesia", "value": "$2.6B",  "latitude": 2,   "longitude": 135,  "name_length": 12}
+        ]
+      },
+      "mark": {
+        "type": "point",
+        "shape": "square",
+        "fill": "#faf6f0",
+        "fillOpacity": 0.6,
+        "stroke": "#d4b896",
+        "strokeWidth": 1,
+        "opacity": 1
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude":  {"field": "latitude",  "type": "quantitative"},
+        "size": {
+          "field": "name_length",
+          "type": "quantitative",
+          "scale": {"domain": [3, 12], "range": [800, 2000]},
+          "legend": null
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"country": "China",     "value": "$15.8B", "latitude": 48,  "longitude": 105},
+          {"country": "Japan",     "value": "$5.2B",  "latitude": 42,  "longitude": 148},
+          {"country": "USA",       "value": "$2.8B",  "latitude": 53,  "longitude": -100},
+          {"country": "Indonesia", "value": "$2.6B",  "latitude": 2,   "longitude": 135}
         ]
       },
       "mark": {
         "type": "text",
-        "fontSize": 10,
+        "fontSize": 11,
         "fontWeight": "bold",
-        "color": "#333",
-        "align": "left",
-        "dy": -10
+        "color": "#2c1a0e",
+        "align": "center",
+        "dy": -6
       },
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
-        "latitude": {"field": "latitude", "type": "quantitative"},
-        "text": {"field": "label", "type": "nominal"}
+        "latitude":  {"field": "latitude",  "type": "quantitative"},
+        "text":      {"field": "country",   "type": "nominal"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"country": "China",     "value": "$15.8B", "latitude": 48,  "longitude": 105},
+          {"country": "Japan",     "value": "$5.2B",  "latitude": 42,  "longitude": 148},
+          {"country": "USA",       "value": "$2.8B",  "latitude": 53,  "longitude": -100},
+          {"country": "Indonesia", "value": "$2.6B",  "latitude": 2,   "longitude": 135}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#b35900",
+        "align": "center",
+        "dy": 8
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude":  {"field": "latitude",  "type": "quantitative"},
+        "text":      {"field": "value",     "type": "nominal"}
       }
     }
   ]

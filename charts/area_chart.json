@@ -1,17 +1,24 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "transparent",
-  "width": 750,
-  "height": 350,
   "title": {
     "text": "Australian Food Exports by Category Over Time",
-    "subtitle": "Value in AUD millions — hover to explore",
+    "subtitle": "Value in AUD millions — click a category in the legend to highlight it",
     "fontSize": 16,
     "subtitleFontSize": 12
   },
   "data": {
     "url": "data/food_exports_by_category_year.csv"
   },
+  "params": [
+    {
+      "name": "category_select",
+      "select": {"type": "point", "fields": ["category"]},
+      "bind": "legend"
+    }
+  ],
+  "width": 750,
+  "height": 350,
   "mark": {"type": "area"},
   "encoding": {
     "x": {
@@ -36,10 +43,14 @@
         "range": ["#c0392b", "#2980b9", "#f39c12", "#27ae60", "#8e44ad", "#e67e22", "#16a085", "#7f8c8d"]
       }
     },
+    "opacity": {
+      "condition": {"param": "category_select", "value": 1},
+      "value": 0.2
+    },
     "tooltip": [
       {"field": "year", "type": "ordinal", "title": "Year"},
       {"field": "category", "type": "nominal", "title": "Category"},
-      {"field": "value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": ",.0f"}
+      {"field": "value_aud_millions", "type": "quantitative", "title": "AUD Millions", "format": "$,.0f"}
     ]
   }
 }
