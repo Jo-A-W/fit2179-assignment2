@@ -1,0 +1,122 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 950,
+  "height": 300,
+  "title": {
+    "text": "Commodity Export Growth: 2019–20 to 2024–25",
+    "subtitle": "Percentage change in export value over five years — Source: ABARES",
+    "fontSize": 16,
+    "subtitleFontSize": 12
+  },
+  "data": {
+    "values": [
+      {"commodity": "Canola",     "val_start": 1173.12, "val_end": 4908.96, "pct_change": 318.5, "zero": 0},
+      {"commodity": "Cotton",     "val_start": 963.53,  "val_end": 3397.43, "pct_change": 252.6, "zero": 0},
+      {"commodity": "Barley",     "val_start": 1027.63, "val_end": 2961.80, "pct_change": 188.2, "zero": 0},
+      {"commodity": "Wheat",      "val_start": 3847.30, "val_end": 8660.50, "pct_change": 125.1, "zero": 0},
+      {"commodity": "Tree nuts",  "val_start": 1013.59, "val_end": 1632.30, "pct_change": 61.0,  "zero": 0},
+      {"commodity": "Sugar",      "val_start": 1606.28, "val_end": 2049.68, "pct_change": 27.6,  "zero": 0},
+      {"commodity": "Vegetables", "val_start": 413.95,  "val_end": 437.80,  "pct_change": 5.8,   "zero": 0},
+      {"commodity": "Fruit",      "val_start": 1611.85, "val_end": 1696.38, "pct_change": 5.2,   "zero": 0},
+      {"commodity": "Wine",       "val_start": 2899.97, "val_end": 2608.51, "pct_change": -10.1, "zero": 0}
+    ]
+  },
+  "transform": [
+    {
+      "calculate": "datum.pct_change >= 0 ? 'Growth' : 'Decline'",
+      "as": "trend"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "rule", "strokeWidth": 2.5},
+      "encoding": {
+        "y": {
+          "field": "commodity",
+          "type": "nominal",
+          "title": null,
+          "sort": {"field": "pct_change", "order": "descending"}
+        },
+        "x": {
+          "field": "zero",
+          "type": "quantitative"
+        },
+        "x2": {
+          "field": "pct_change"
+        },
+        "color": {
+          "field": "trend",
+          "type": "nominal",
+          "scale": {"domain": ["Growth", "Decline"], "range": ["#b35900", "#2a6496"]},
+          "legend": null
+        },
+        "opacity": {"value": 0.45}
+      }
+    },
+    {
+      "mark": {"type": "point", "filled": true, "size": 120},
+      "encoding": {
+        "y": {
+          "field": "commodity",
+          "type": "nominal",
+          "sort": {"field": "pct_change", "order": "descending"}
+        },
+        "x": {
+          "field": "pct_change",
+          "type": "quantitative",
+          "title": "% Change in Export Value",
+          "axis": {
+            "labelExpr": "datum.value + '%'",
+            "gridColor": "#f0e4d0",
+            "gridDash": [3, 3]
+          }
+        },
+        "color": {
+          "field": "trend",
+          "type": "nominal",
+          "scale": {"domain": ["Growth", "Decline"], "range": ["#b35900", "#2a6496"]},
+          "legend": {
+            "title": "5-Year Trend",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "symbolType": "circle",
+            "symbolSize": 80,
+            "labelFontSize": 11,
+            "titleFontSize": 11
+          }
+        },
+        "tooltip": [
+          {"field": "commodity",  "type": "nominal",      "title": "Commodity"},
+          {"field": "val_start",  "type": "quantitative", "title": "2019–20 (AUD M)", "format": "$,.0f"},
+          {"field": "val_end",    "type": "quantitative", "title": "2024–25 (AUD M)", "format": "$,.0f"},
+          {"field": "pct_change", "type": "quantitative", "title": "% Change",        "format": "+.1f"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "left", "dx": 8, "fontSize": 10.5, "fontWeight": "600"},
+      "encoding": {
+        "y": {
+          "field": "commodity",
+          "type": "nominal",
+          "sort": {"field": "pct_change", "order": "descending"}
+        },
+        "x": {"field": "pct_change", "type": "quantitative"},
+        "text": {"field": "pct_change", "type": "quantitative", "format": "+.0f"},
+        "color": {
+          "field": "trend",
+          "type": "nominal",
+          "scale": {"domain": ["Growth", "Decline"], "range": ["#b35900", "#2a6496"]},
+          "legend": null
+        }
+      }
+    },
+    {
+      "mark": {"type": "rule", "color": "#2c1a0e", "strokeWidth": 1, "opacity": 0.3},
+      "encoding": {
+        "x": {"field": "zero", "type": "quantitative"}
+      }
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "transparent",
-  "width": 280,
+  "width": 320,
   "height": 400,
   "title": {
     "text": "Top 15 Australian Food Exports (2024)",

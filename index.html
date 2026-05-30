@@ -528,6 +528,11 @@
             <p class="chart-annotation">Stacked area chart showing the composition of food exports 2006–2025. Click any
                 category in the legend to isolate it. Notice the dramatic rise of Grains &amp; Cereals from 2021, and
                 the steady growth of Fruit &amp; Vegetables.</p>
+            <div class="chart-box-full" id="chart_lollipop"></div>
+            <p class="chart-annotation">Lollipop chart showing the percentage change in each commodity's export value
+                from 2019–20 to 2024–25. Canola led all growth at +319%, more than tripling in five years. Wine was
+                the only commodity to decline. Hover over each dot for exact AUD values and percentage change.</p>
+
             <div class="insight-box">
                 <div class="insight-label">Key Insight</div>
                 <p>Australia's <strong>wheat exports tripled</strong> between 2020 and 2023, reaching a record
@@ -617,7 +622,7 @@
                 Singapore are actually net food import partners — Australia buys more food from them than it sells."
             </div>
             <span class="interactive-hint">Interactive — hover over bars to compare export &amp; import values</span>
-            <div class="chart-box-full" id="chart_bubble"></div>
+            <div class="chart-box-full" id="chart_diverging"></div>
             <p class="chart-annotation">Diverging bar chart: bars extending right = Australian food exports to that
                 country; bars extending left = Australian food imports from that country. Countries where the left bar
                 dominates (New Zealand, Singapore, Thailand) are ones where Australia runs a food trade deficit.</p>
@@ -670,17 +675,16 @@
     <script>
         const OPTS = { actions: false, renderer: 'svg' };
 
-        // Pulling the charts directly from your JSON files to satisfy the rubric!
         vegaEmbed('#chart_line', 'charts/line_total_exports.json', OPTS).catch(console.error);
         vegaEmbed('#chart_donut', 'charts/donut_categories.json', OPTS).catch(console.error);
         vegaEmbed('#chart_export_bar', 'charts/bar_top_commodities.json', OPTS).catch(console.error);
         vegaEmbed('#chart_bar_production', 'charts/bar_production.json', OPTS).catch(console.error);
         vegaEmbed('#chart_area', 'charts/area_chart.json', OPTS).catch(console.error);
+        vegaEmbed('#chart_lollipop', 'charts/lollipop_growth.json', OPTS).catch(console.error);
         vegaEmbed('#chart_world_export_map', 'charts/world_map.json', OPTS).catch(console.error);
         vegaEmbed('#chart_aus_map', 'charts/aus_bubble_map.json', OPTS).catch(console.error);
         vegaEmbed('#chart_heatmap', 'charts/heatmap.json', OPTS).catch(console.error);
-        vegaEmbed('#chart_bubble', 'charts/diverging_bar.json', OPTS).catch(console.error);
-        vegaEmbed('#chart_scatter', 'charts/scatter_trade_balance.json', OPTS).catch(console.error);
+        vegaEmbed('#chart_diverging', 'charts/diverging_bar.json', OPTS).catch(console.error);
         vegaEmbed('#chart_line_commodities', 'charts/line_commodities.json', OPTS).catch(console.error);
     </script>
 </body>
