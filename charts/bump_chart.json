@@ -1,0 +1,805 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 900,
+  "height": 380,
+  "title": {
+    "text": "Commodity Export Rankings Over Time (2014–15 to 2024–25)",
+    "subtitle": "Each line tracks a commodity's rank — 1st = highest export value — Source: ABARES",
+    "fontSize": 16,
+    "subtitleFontSize": 12
+  },
+  "data": {
+    "values": [
+      {
+        "financial_year": "2014–15",
+        "commodity": "Wheat",
+        "rank": 1,
+        "value_aud_millions": 5528.1
+      },
+      {
+        "financial_year": "2014–15",
+        "commodity": "Wine",
+        "rank": 2,
+        "value_aud_millions": 1982.7
+      },
+      {
+        "financial_year": "2014–15",
+        "commodity": "Barley",
+        "rank": 3,
+        "value_aud_millions": 1758.1
+      },
+      {
+        "financial_year": "2014–15",
+        "commodity": "Sugar",
+        "rank": 4,
+        "value_aud_millions": 1643.0
+      },
+      {
+        "financial_year": "2014–15",
+        "commodity": "Cotton",
+        "rank": 5,
+        "value_aud_millions": 1546.1
+      },
+      {
+        "financial_year": "2014–15",
+        "commodity": "Canola",
+        "rank": 6,
+        "value_aud_millions": 1349.3
+      },
+      {
+        "financial_year": "2014–15",
+        "commodity": "Tree nuts",
+        "rank": 7,
+        "value_aud_millions": 732.0
+      },
+      {
+        "financial_year": "2014–15",
+        "commodity": "Fruit",
+        "rank": 8,
+        "value_aud_millions": 716.3
+      },
+      {
+        "financial_year": "2014–15",
+        "commodity": "Vegetables",
+        "rank": 9,
+        "value_aud_millions": 231.5
+      },
+      {
+        "financial_year": "2015–16",
+        "commodity": "Wheat",
+        "rank": 1,
+        "value_aud_millions": 5096.3
+      },
+      {
+        "financial_year": "2015–16",
+        "commodity": "Wine",
+        "rank": 2,
+        "value_aud_millions": 2183.9
+      },
+      {
+        "financial_year": "2015–16",
+        "commodity": "Sugar",
+        "rank": 3,
+        "value_aud_millions": 1823.4
+      },
+      {
+        "financial_year": "2015–16",
+        "commodity": "Barley",
+        "rank": 4,
+        "value_aud_millions": 1444.7
+      },
+      {
+        "financial_year": "2015–16",
+        "commodity": "Cotton",
+        "rank": 5,
+        "value_aud_millions": 1269.2
+      },
+      {
+        "financial_year": "2015–16",
+        "commodity": "Canola",
+        "rank": 6,
+        "value_aud_millions": 1097.1
+      },
+      {
+        "financial_year": "2015–16",
+        "commodity": "Fruit",
+        "rank": 7,
+        "value_aud_millions": 1027.3
+      },
+      {
+        "financial_year": "2015–16",
+        "commodity": "Tree nuts",
+        "rank": 8,
+        "value_aud_millions": 929.0
+      },
+      {
+        "financial_year": "2015–16",
+        "commodity": "Vegetables",
+        "rank": 9,
+        "value_aud_millions": 286.0
+      },
+      {
+        "financial_year": "2016–17",
+        "commodity": "Wheat",
+        "rank": 1,
+        "value_aud_millions": 6073.3
+      },
+      {
+        "financial_year": "2016–17",
+        "commodity": "Sugar",
+        "rank": 2,
+        "value_aud_millions": 2424.4
+      },
+      {
+        "financial_year": "2016–17",
+        "commodity": "Wine",
+        "rank": 3,
+        "value_aud_millions": 2366.3
+      },
+      {
+        "financial_year": "2016–17",
+        "commodity": "Canola",
+        "rank": 4,
+        "value_aud_millions": 2127.9
+      },
+      {
+        "financial_year": "2016–17",
+        "commodity": "Barley",
+        "rank": 5,
+        "value_aud_millions": 2106.2
+      },
+      {
+        "financial_year": "2016–17",
+        "commodity": "Cotton",
+        "rank": 6,
+        "value_aud_millions": 1788.4
+      },
+      {
+        "financial_year": "2016–17",
+        "commodity": "Fruit",
+        "rank": 7,
+        "value_aud_millions": 1042.4
+      },
+      {
+        "financial_year": "2016–17",
+        "commodity": "Tree nuts",
+        "rank": 8,
+        "value_aud_millions": 819.0
+      },
+      {
+        "financial_year": "2016–17",
+        "commodity": "Vegetables",
+        "rank": 9,
+        "value_aud_millions": 311.5
+      },
+      {
+        "financial_year": "2017–18",
+        "commodity": "Wheat",
+        "rank": 1,
+        "value_aud_millions": 4652.1
+      },
+      {
+        "financial_year": "2017–18",
+        "commodity": "Wine",
+        "rank": 2,
+        "value_aud_millions": 2828.1
+      },
+      {
+        "financial_year": "2017–18",
+        "commodity": "Cotton",
+        "rank": 3,
+        "value_aud_millions": 2131.5
+      },
+      {
+        "financial_year": "2017–18",
+        "commodity": "Barley",
+        "rank": 4,
+        "value_aud_millions": 1974.8
+      },
+      {
+        "financial_year": "2017–18",
+        "commodity": "Sugar",
+        "rank": 5,
+        "value_aud_millions": 1536.4
+      },
+      {
+        "financial_year": "2017–18",
+        "commodity": "Canola",
+        "rank": 6,
+        "value_aud_millions": 1306.1
+      },
+      {
+        "financial_year": "2017–18",
+        "commodity": "Fruit",
+        "rank": 7,
+        "value_aud_millions": 1199.4
+      },
+      {
+        "financial_year": "2017–18",
+        "commodity": "Tree nuts",
+        "rank": 8,
+        "value_aud_millions": 800.8
+      },
+      {
+        "financial_year": "2017–18",
+        "commodity": "Vegetables",
+        "rank": 9,
+        "value_aud_millions": 325.0
+      },
+      {
+        "financial_year": "2018–19",
+        "commodity": "Wheat",
+        "rank": 1,
+        "value_aud_millions": 3656.7
+      },
+      {
+        "financial_year": "2018–19",
+        "commodity": "Wine",
+        "rank": 2,
+        "value_aud_millions": 2953.8
+      },
+      {
+        "financial_year": "2018–19",
+        "commodity": "Cotton",
+        "rank": 3,
+        "value_aud_millions": 2555.6
+      },
+      {
+        "financial_year": "2018–19",
+        "commodity": "Sugar",
+        "rank": 4,
+        "value_aud_millions": 1530.3
+      },
+      {
+        "financial_year": "2018–19",
+        "commodity": "Fruit",
+        "rank": 5,
+        "value_aud_millions": 1461.3
+      },
+      {
+        "financial_year": "2018–19",
+        "commodity": "Barley",
+        "rank": 6,
+        "value_aud_millions": 1381.8
+      },
+      {
+        "financial_year": "2018–19",
+        "commodity": "Tree nuts",
+        "rank": 7,
+        "value_aud_millions": 1071.3
+      },
+      {
+        "financial_year": "2018–19",
+        "commodity": "Canola",
+        "rank": 8,
+        "value_aud_millions": 953.4
+      },
+      {
+        "financial_year": "2018–19",
+        "commodity": "Vegetables",
+        "rank": 9,
+        "value_aud_millions": 390.7
+      },
+      {
+        "financial_year": "2019–20",
+        "commodity": "Wheat",
+        "rank": 1,
+        "value_aud_millions": 3847.3
+      },
+      {
+        "financial_year": "2019–20",
+        "commodity": "Wine",
+        "rank": 2,
+        "value_aud_millions": 2900.0
+      },
+      {
+        "financial_year": "2019–20",
+        "commodity": "Fruit",
+        "rank": 3,
+        "value_aud_millions": 1611.9
+      },
+      {
+        "financial_year": "2019–20",
+        "commodity": "Sugar",
+        "rank": 4,
+        "value_aud_millions": 1606.3
+      },
+      {
+        "financial_year": "2019–20",
+        "commodity": "Canola",
+        "rank": 5,
+        "value_aud_millions": 1173.1
+      },
+      {
+        "financial_year": "2019–20",
+        "commodity": "Barley",
+        "rank": 6,
+        "value_aud_millions": 1027.6
+      },
+      {
+        "financial_year": "2019–20",
+        "commodity": "Tree nuts",
+        "rank": 7,
+        "value_aud_millions": 1013.6
+      },
+      {
+        "financial_year": "2019–20",
+        "commodity": "Cotton",
+        "rank": 8,
+        "value_aud_millions": 963.5
+      },
+      {
+        "financial_year": "2019–20",
+        "commodity": "Vegetables",
+        "rank": 9,
+        "value_aud_millions": 414.0
+      },
+      {
+        "financial_year": "2020–21",
+        "commodity": "Wheat",
+        "rank": 1,
+        "value_aud_millions": 6804.9
+      },
+      {
+        "financial_year": "2020–21",
+        "commodity": "Wine",
+        "rank": 2,
+        "value_aud_millions": 2618.9
+      },
+      {
+        "financial_year": "2020–21",
+        "commodity": "Canola",
+        "rank": 3,
+        "value_aud_millions": 2185.0
+      },
+      {
+        "financial_year": "2020–21",
+        "commodity": "Barley",
+        "rank": 4,
+        "value_aud_millions": 1910.0
+      },
+      {
+        "financial_year": "2020–21",
+        "commodity": "Sugar",
+        "rank": 5,
+        "value_aud_millions": 1609.1
+      },
+      {
+        "financial_year": "2020–21",
+        "commodity": "Fruit",
+        "rank": 6,
+        "value_aud_millions": 1327.3
+      },
+      {
+        "financial_year": "2020–21",
+        "commodity": "Tree nuts",
+        "rank": 7,
+        "value_aud_millions": 922.7
+      },
+      {
+        "financial_year": "2020–21",
+        "commodity": "Cotton",
+        "rank": 8,
+        "value_aud_millions": 629.2
+      },
+      {
+        "financial_year": "2020–21",
+        "commodity": "Vegetables",
+        "rank": 9,
+        "value_aud_millions": 401.0
+      },
+      {
+        "financial_year": "2021–22",
+        "commodity": "Wheat",
+        "rank": 1,
+        "value_aud_millions": 11336.2
+      },
+      {
+        "financial_year": "2021–22",
+        "commodity": "Canola",
+        "rank": 2,
+        "value_aud_millions": 5764.0
+      },
+      {
+        "financial_year": "2021–22",
+        "commodity": "Barley",
+        "rank": 3,
+        "value_aud_millions": 2976.8
+      },
+      {
+        "financial_year": "2021–22",
+        "commodity": "Cotton",
+        "rank": 4,
+        "value_aud_millions": 2229.2
+      },
+      {
+        "financial_year": "2021–22",
+        "commodity": "Wine",
+        "rank": 5,
+        "value_aud_millions": 2196.6
+      },
+      {
+        "financial_year": "2021–22",
+        "commodity": "Sugar",
+        "rank": 6,
+        "value_aud_millions": 2024.5
+      },
+      {
+        "financial_year": "2021–22",
+        "commodity": "Fruit",
+        "rank": 7,
+        "value_aud_millions": 1320.7
+      },
+      {
+        "financial_year": "2021–22",
+        "commodity": "Tree nuts",
+        "rank": 8,
+        "value_aud_millions": 1006.4
+      },
+      {
+        "financial_year": "2021–22",
+        "commodity": "Vegetables",
+        "rank": 9,
+        "value_aud_millions": 419.4
+      },
+      {
+        "financial_year": "2022–23",
+        "commodity": "Wheat",
+        "rank": 1,
+        "value_aud_millions": 16737.9
+      },
+      {
+        "financial_year": "2022–23",
+        "commodity": "Canola",
+        "rank": 2,
+        "value_aud_millions": 5676.7
+      },
+      {
+        "financial_year": "2022–23",
+        "commodity": "Cotton",
+        "rank": 3,
+        "value_aud_millions": 4901.4
+      },
+      {
+        "financial_year": "2022–23",
+        "commodity": "Barley",
+        "rank": 4,
+        "value_aud_millions": 3331.7
+      },
+      {
+        "financial_year": "2022–23",
+        "commodity": "Sugar",
+        "rank": 5,
+        "value_aud_millions": 2203.8
+      },
+      {
+        "financial_year": "2022–23",
+        "commodity": "Wine",
+        "rank": 6,
+        "value_aud_millions": 2027.2
+      },
+      {
+        "financial_year": "2022–23",
+        "commodity": "Fruit",
+        "rank": 7,
+        "value_aud_millions": 1415.9
+      },
+      {
+        "financial_year": "2022–23",
+        "commodity": "Tree nuts",
+        "rank": 8,
+        "value_aud_millions": 1196.6
+      },
+      {
+        "financial_year": "2022–23",
+        "commodity": "Vegetables",
+        "rank": 9,
+        "value_aud_millions": 408.0
+      },
+      {
+        "financial_year": "2023–24",
+        "commodity": "Wheat",
+        "rank": 1,
+        "value_aud_millions": 9871.4
+      },
+      {
+        "financial_year": "2023–24",
+        "commodity": "Canola",
+        "rank": 2,
+        "value_aud_millions": 4703.9
+      },
+      {
+        "financial_year": "2023–24",
+        "commodity": "Cotton",
+        "rank": 3,
+        "value_aud_millions": 4146.0
+      },
+      {
+        "financial_year": "2023–24",
+        "commodity": "Barley",
+        "rank": 4,
+        "value_aud_millions": 3317.3
+      },
+      {
+        "financial_year": "2023–24",
+        "commodity": "Sugar",
+        "rank": 5,
+        "value_aud_millions": 3021.6
+      },
+      {
+        "financial_year": "2023–24",
+        "commodity": "Wine",
+        "rank": 6,
+        "value_aud_millions": 2318.2
+      },
+      {
+        "financial_year": "2023–24",
+        "commodity": "Fruit",
+        "rank": 7,
+        "value_aud_millions": 1577.8
+      },
+      {
+        "financial_year": "2023–24",
+        "commodity": "Tree nuts",
+        "rank": 8,
+        "value_aud_millions": 998.5
+      },
+      {
+        "financial_year": "2023–24",
+        "commodity": "Vegetables",
+        "rank": 9,
+        "value_aud_millions": 442.7
+      },
+      {
+        "financial_year": "2024–25",
+        "commodity": "Wheat",
+        "rank": 1,
+        "value_aud_millions": 8660.5
+      },
+      {
+        "financial_year": "2024–25",
+        "commodity": "Canola",
+        "rank": 2,
+        "value_aud_millions": 4909.0
+      },
+      {
+        "financial_year": "2024–25",
+        "commodity": "Cotton",
+        "rank": 3,
+        "value_aud_millions": 3397.4
+      },
+      {
+        "financial_year": "2024–25",
+        "commodity": "Barley",
+        "rank": 4,
+        "value_aud_millions": 2961.8
+      },
+      {
+        "financial_year": "2024–25",
+        "commodity": "Wine",
+        "rank": 5,
+        "value_aud_millions": 2608.5
+      },
+      {
+        "financial_year": "2024–25",
+        "commodity": "Sugar",
+        "rank": 6,
+        "value_aud_millions": 2049.7
+      },
+      {
+        "financial_year": "2024–25",
+        "commodity": "Fruit",
+        "rank": 7,
+        "value_aud_millions": 1696.4
+      },
+      {
+        "financial_year": "2024–25",
+        "commodity": "Tree nuts",
+        "rank": 8,
+        "value_aud_millions": 1632.3
+      },
+      {
+        "financial_year": "2024–25",
+        "commodity": "Vegetables",
+        "rank": 9,
+        "value_aud_millions": 437.8
+      }
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.5,
+        "point": {
+          "filled": true,
+          "size": 60
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "financial_year",
+          "type": "ordinal",
+          "title": "Financial Year",
+          "sort": [
+            "2014–15",
+            "2015–16",
+            "2016–17",
+            "2017–18",
+            "2018–19",
+            "2019–20",
+            "2020–21",
+            "2021–22",
+            "2022–23",
+            "2023–24",
+            "2024–25"
+          ],
+          "axis": {
+            "labelAngle": -45,
+            "labelFontSize": 10
+          }
+        },
+        "y": {
+          "field": "rank",
+          "type": "ordinal",
+          "title": "Rank",
+          "sort": "ascending",
+          "scale": {
+            "domain": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          },
+          "axis": {
+            "labelExpr": "datum.value === 1 ? '1st' : datum.value === 2 ? '2nd' : datum.value === 3 ? '3rd' : datum.value + 'th'",
+            "labelFontSize": 11,
+            "gridColor": "#f0e4d0",
+            "gridDash": [
+              3,
+              3
+            ]
+          }
+        },
+        "color": {
+          "field": "commodity",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Wheat",
+              "Canola",
+              "Cotton",
+              "Barley",
+              "Wine",
+              "Sugar",
+              "Fruit",
+              "Tree nuts",
+              "Vegetables"
+            ],
+            "range": [
+              "#e6194b",
+              "#4363d8",
+              "#f58231",
+              "#3cb44b",
+              "#42d4f4",
+              "#911eb4",
+              "#f032e6",
+              "#bfef45",
+              "#a9a9a9"
+            ]
+          },
+          "legend": {
+            "title": "Commodity",
+            "orient": "right",
+            "labelFontSize": 11,
+            "titleFontSize": 11
+          }
+        },
+        "detail": {
+          "field": "commodity"
+        },
+        "tooltip": [
+          {
+            "field": "commodity",
+            "type": "nominal",
+            "title": "Commodity"
+          },
+          {
+            "field": "financial_year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "rank",
+            "type": "ordinal",
+            "title": "Rank"
+          },
+          {
+            "field": "value_aud_millions",
+            "type": "quantitative",
+            "title": "AUD Millions",
+            "format": "$,.0f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.financial_year == '2024–25'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "fontSize": 10,
+        "fontWeight": "600"
+      },
+      "encoding": {
+        "x": {
+          "field": "financial_year",
+          "type": "ordinal",
+          "sort": [
+            "2014–15",
+            "2015–16",
+            "2016–17",
+            "2017–18",
+            "2018–19",
+            "2019–20",
+            "2020–21",
+            "2021–22",
+            "2022–23",
+            "2023–24",
+            "2024–25"
+          ]
+        },
+        "y": {
+          "field": "rank",
+          "type": "ordinal",
+          "sort": "ascending"
+        },
+        "text": {
+          "field": "commodity",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "commodity",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Wheat",
+              "Canola",
+              "Cotton",
+              "Barley",
+              "Wine",
+              "Sugar",
+              "Fruit",
+              "Tree nuts",
+              "Vegetables"
+            ],
+            "range": [
+              "#e6194b",
+              "#4363d8",
+              "#f58231",
+              "#3cb44b",
+              "#42d4f4",
+              "#911eb4",
+              "#f032e6",
+              "#bfef45",
+              "#a9a9a9"
+            ]
+          },
+          "legend": null
+        }
+      }
+    }
+  ]
+}

@@ -2,9 +2,7 @@
 <html lang="en">
 
 <head>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Australia's Food Trade Story</title>
@@ -12,11 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Source Serif 4', serif;
@@ -28,7 +22,7 @@
 
         .hero {
             background-color: #2c1a0e;
-            background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.015) 2px, rgba(255, 255, 255, 0.015) 4px);
+            background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.015) 2px, rgba(255,255,255,0.015) 4px);
             color: #f5e6c8;
             text-align: center;
             padding: 80px 40px 60px;
@@ -98,9 +92,7 @@
             border-right: 1px solid #c8b89a;
         }
 
-        .stat-item:last-child {
-            border-right: none;
-        }
+        .stat-item:last-child { border-right: none; }
 
         .stat-num {
             font-family: 'Playfair Display', serif;
@@ -233,13 +225,8 @@
             margin-bottom: 6px;
         }
 
-        .insight-box p {
-            color: #d4b896;
-        }
-
-        .insight-box strong {
-            color: #f5e6c8;
-        }
+        .insight-box p { color: #d4b896; }
+        .insight-box strong { color: #f5e6c8; }
 
         .pull-quote {
             border-left: 4px solid #b35900;
@@ -260,19 +247,6 @@
             font-style: italic;
             margin-top: 10px;
             padding-left: 4px;
-        }
-
-        .two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-top: 24px;
-        }
-
-        @media (max-width: 900px) {
-            .two-col {
-                grid-template-columns: 1fr;
-            }
         }
 
         .interactive-hint {
@@ -324,14 +298,8 @@
             border-top: 6px double #b35900;
         }
 
-        footer a {
-            color: #c8903a;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
+        footer a { color: #c8903a; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
 
         footer .footer-inner {
             max-width: 1200px;
@@ -341,12 +309,17 @@
             flex-wrap: wrap;
         }
 
-        footer .footer-col {
-            flex: 1;
-            min-width: 200px;
+        footer .footer-col { flex: 1; min-width: 200px; }
+
+        footer h3 {
+            font-family: 'Playfair Display', serif;
+            color: #f5e6c8;
+            font-size: 1em;
+            margin-bottom: 12px;
+            font-weight: 700;
         }
 
-        /* Vega-generated binding controls */
+        /* Vega binding controls */
         .vega-bind {
             display: flex;
             align-items: center;
@@ -382,14 +355,8 @@
             transition: border-color 0.2s;
         }
 
-        .vega-bind select:hover {
-            border-color: #b35900;
-        }
-
-        .vega-bind select:focus {
-            outline: none;
-            border-color: #b35900;
-        }
+        .vega-bind select:hover { border-color: #b35900; }
+        .vega-bind select:focus { outline: none; border-color: #b35900; }
 
         .vega-bind input[type="range"] {
             -webkit-appearance: none;
@@ -435,14 +402,6 @@
             border-radius: 2px;
             background: linear-gradient(to right, #b35900, #f0a050);
         }
-
-        footer h3 {
-            font-family: 'Playfair Display', serif;
-            color: #f5e6c8;
-            font-size: 1em;
-            margin-bottom: 12px;
-            font-weight: 700;
-        }
     </style>
 </head>
 
@@ -477,167 +436,113 @@
 
     <div class="container">
 
-        <!-- SECTION 1 -->
+        <!-- CHAPTER I -->
         <div class="section">
             <span class="section-label">Chapter I</span>
             <h2>The Big Picture</h2>
             <div class="section-rule"></div>
-            <p class="section-desc">Australia is one of the world's largest food exporters, sending over $66.7 billion
-                worth of food products overseas in 2025. Over the past two decades, the value of Australia's food
-                exports has more than doubled — driven by growing demand from Asia and rising global food prices. The
-                COVID-19 pandemic caused only a minor dip in 2020 before a record-breaking surge.</p>
-            <div class="pull-quote">"Australia exports enough food to feed approximately 75 million people annually —
-                nearly three times its own population."</div>
+            <p class="section-desc">Australia is one of the world's largest food exporters, sending over $66.7 billion worth of food products overseas in 2025. Over the past two decades, the value of Australia's food exports has more than doubled — driven by growing demand from Asia and rising global food prices. The COVID-19 pandemic caused only a minor dip in 2020 before a record-breaking surge.</p>
+            <div class="pull-quote">"Australia exports enough food to feed approximately 75 million people annually — nearly three times its own population."</div>
             <span class="interactive-hint">Interactive — hover over data points for details</span>
             <div class="chart-row">
                 <div class="chart-box" id="chart_line"></div>
                 <div class="chart-box" id="chart_donut"></div>
             </div>
-            <p class="chart-annotation">Left: Total food export value 2006–2025. Annotations mark the COVID-19 dip
-                (2020) and the record high in 2025.<br>Right: Use the year slider to see how the export mix has shifted
-                — Meat &amp; Livestock now dominates more than ever.</p>
+            <p class="chart-annotation">Left: Total food export value 2006–2025. Annotations mark the COVID-19 dip (2020) and the record high in 2025.<br>Right: Use the year slider to see how the export mix has shifted — Meat &amp; Livestock now dominates more than ever.</p>
             <div class="insight-box">
                 <div class="insight-label">Key Insight</div>
-                <p><strong>Meat &amp; Livestock</strong> has been Australia's largest food export category every year
-                    since 2006. By 2025, it accounted for over <strong>42%</strong> of total food exports — nearly $28.5
-                    billion. Grains &amp; Cereals surged dramatically in 2021–23 due to global supply shortages
-                    following the Russia-Ukraine war.</p>
+                <p><strong>Meat &amp; Livestock</strong> has been Australia's largest food export category every year since 2006. By 2025, it accounted for over <strong>42%</strong> of total food exports — nearly $28.5 billion. Grains &amp; Cereals surged dramatically in 2021–23 due to global supply shortages following the Russia-Ukraine war.</p>
             </div>
         </div>
 
         <hr class="divider">
 
-        <!-- SECTION 2 -->
+        <!-- CHAPTER II -->
         <div class="section">
             <span class="section-label">Chapter II</span>
             <h2>What Australia Exports</h2>
             <div class="section-rule"></div>
-            <p class="section-desc">From beef to wheat, Australia exports a remarkably diverse range of food products.
-                Beef consistently ranks as the most valuable single export commodity, followed by wheat and other
-                grains. The product mix has shifted over time — canola and tree nuts are fast-growing categories, while
-                wine exports peaked in the mid-2000s.</p>
+            <p class="section-desc">From beef to wheat, Australia exports a remarkably diverse range of food products. Beef consistently ranks as the most valuable single export commodity, followed by wheat and other grains. The product mix has shifted over time — canola and tree nuts are fast-growing categories, while wine exports peaked in the mid-2000s.</p>
             <span class="interactive-hint">Interactive — hover for values, click legend to highlight</span>
             <div class="chart-row">
                 <div class="chart-box" id="chart_export_bar"></div>
                 <div class="chart-box" id="chart_bar_production"></div>
             </div>
-            <p class="chart-annotation">Left: Top 15 food export commodities by value in 2024. Beef alone — at $14B —
-                exceeds the next three commodities combined.<br>Right: Gross production value by commodity in 2024–25.
-                Wheat leads production but beef dominates export revenue, reflecting higher processed-food margins.</p>
+            <p class="chart-annotation">Left: Top 15 food export commodities by value in 2024. Beef alone — at $14B — exceeds the next three commodities combined.<br>Right: Gross production value by commodity in 2024–25. Wheat leads production but beef dominates export revenue, reflecting higher processed-food margins.</p>
+
             <div class="chart-box-full" id="chart_area"></div>
-            <p class="chart-annotation">Stacked area chart showing the composition of food exports 2006–2025. Click any
-                category in the legend to isolate it. Notice the dramatic rise of Grains &amp; Cereals from 2021, and
-                the steady growth of Fruit &amp; Vegetables.</p>
+            <p class="chart-annotation">Stacked area chart showing the composition of food exports 2006–2025. Click any category in the legend to isolate it. Notice the dramatic rise of Grains &amp; Cereals from 2021, and the steady growth of Fruit &amp; Vegetables.</p>
+
             <div class="chart-box-full" id="chart_lollipop"></div>
-            <p class="chart-annotation">Lollipop chart showing the percentage change in each commodity's export value
-                from 2019–20 to 2024–25. Canola led all growth at +319%, more than tripling in five years. Wine was
-                the only commodity to decline. Hover over each dot for exact AUD values and percentage change.</p>
+            <p class="chart-annotation">Lollipop chart showing the percentage change in each commodity's export value from 2019–20 to 2024–25. Canola led all growth at +319%, more than tripling in five years. Wine was the only commodity to decline. Hover over each dot for exact AUD values and percentage change.</p>
+
+            <div class="chart-box-full" id="chart_bump"></div>
+            <p class="chart-annotation">Bump chart tracking each commodity's export rank from 2014–15 to 2024–25. Canola's dramatic rise from 6th to 2nd is the standout story — driven by booming global demand. Wine dropped from 2nd to 5th over the same period. Hover any point for exact values.</p>
 
             <div class="insight-box">
                 <div class="insight-label">Key Insight</div>
-                <p>Australia's <strong>wheat exports tripled</strong> between 2020 and 2023, reaching a record
-                    <strong>$16.7 billion</strong> in 2022–23. This was driven by strong global demand following supply
-                    disruptions in Ukraine and Russia, which together normally account for around 30% of global wheat
-                    exports.</p>
+                <p>Australia's <strong>wheat exports tripled</strong> between 2020 and 2023, reaching a record <strong>$16.7 billion</strong> in 2022–23. This was driven by strong global demand following supply disruptions in Ukraine and Russia, which together normally account for around 30% of global wheat exports.</p>
             </div>
+
             <div class="chart-box-full" id="chart_world_export_map"></div>
-            <p class="chart-annotation">Choropleth map showing food export destination by country (2024). Darker shading
-                indicates higher export value. China, Japan, South Korea, and the United States are Australia's four
-                largest markets.</p>
+            <p class="chart-annotation">Choropleth map showing food export destination by country (2024). Darker shading indicates higher export value. China, Japan, South Korea, and the United States are Australia's four largest markets.</p>
         </div>
 
         <hr class="divider">
 
-        <!-- SECTION 3 -->
+        <!-- CHAPTER III -->
         <div class="section">
             <span class="section-label">Chapter III</span>
             <h2>State by State</h2>
             <div class="section-rule"></div>
-            <p class="section-desc">Australia's agricultural output is spread across the continent, with each state
-                specialising in different commodities based on climate and geography. New South Wales leads in overall
-                output, Western Australia dominates grain production, Queensland leads in beef, and Victoria is the
-                dairy heartland. Together, these four states generate over 90% of Australia's agricultural value.</p>
+            <p class="section-desc">Australia's agricultural output is spread across the continent, with each state specialising in different commodities based on climate and geography. New South Wales leads in overall output, Western Australia dominates grain production, Queensland leads in beef, and Victoria is the dairy heartland. Together, these four states generate over 90% of Australia's agricultural value.</p>
             <div class="chart-row" style="margin-bottom: 8px;">
-                <div
-                    style="flex:1;min-width:180px;background:#2c1a0e;color:#f5e6c8;border-radius:4px;padding:20px 24px;text-align:center;">
-                    <div style="font-family:'Playfair Display',serif;font-size:2em;font-weight:900;color:#e07b2a;">
-                        $17.7B</div>
-                    <div
-                        style="font-size:0.8em;letter-spacing:1px;text-transform:uppercase;margin-top:6px;color:#d4b896;">
-                        New South Wales</div>
+                <div style="flex:1;min-width:180px;background:#2c1a0e;color:#f5e6c8;border-radius:4px;padding:20px 24px;text-align:center;">
+                    <div style="font-family:'Playfair Display',serif;font-size:2em;font-weight:900;color:#e07b2a;">$17.7B</div>
+                    <div style="font-size:0.8em;letter-spacing:1px;text-transform:uppercase;margin-top:6px;color:#d4b896;">New South Wales</div>
                     <div style="font-size:0.75em;color:#8a6a4a;margin-top:4px;">Wheat · Cotton · Beef</div>
                 </div>
-                <div
-                    style="flex:1;min-width:180px;background:#2c1a0e;color:#f5e6c8;border-radius:4px;padding:20px 24px;text-align:center;">
-                    <div style="font-family:'Playfair Display',serif;font-size:2em;font-weight:900;color:#e07b2a;">
-                        $13.9B</div>
-                    <div
-                        style="font-size:0.8em;letter-spacing:1px;text-transform:uppercase;margin-top:6px;color:#d4b896;">
-                        Victoria</div>
+                <div style="flex:1;min-width:180px;background:#2c1a0e;color:#f5e6c8;border-radius:4px;padding:20px 24px;text-align:center;">
+                    <div style="font-family:'Playfair Display',serif;font-size:2em;font-weight:900;color:#e07b2a;">$13.9B</div>
+                    <div style="font-size:0.8em;letter-spacing:1px;text-transform:uppercase;margin-top:6px;color:#d4b896;">Victoria</div>
                     <div style="font-size:0.75em;color:#8a6a4a;margin-top:4px;">Dairy · Beef · Wine</div>
                 </div>
-                <div
-                    style="flex:1;min-width:180px;background:#2c1a0e;color:#f5e6c8;border-radius:4px;padding:20px 24px;text-align:center;">
-                    <div style="font-family:'Playfair Display',serif;font-size:2em;font-weight:900;color:#e07b2a;">
-                        $12.9B</div>
-                    <div
-                        style="font-size:0.8em;letter-spacing:1px;text-transform:uppercase;margin-top:6px;color:#d4b896;">
-                        Western Australia</div>
+                <div style="flex:1;min-width:180px;background:#2c1a0e;color:#f5e6c8;border-radius:4px;padding:20px 24px;text-align:center;">
+                    <div style="font-family:'Playfair Display',serif;font-size:2em;font-weight:900;color:#e07b2a;">$12.9B</div>
+                    <div style="font-size:0.8em;letter-spacing:1px;text-transform:uppercase;margin-top:6px;color:#d4b896;">Western Australia</div>
                     <div style="font-size:0.75em;color:#8a6a4a;margin-top:4px;">Wheat · Barley · Canola</div>
                 </div>
-                <div
-                    style="flex:1;min-width:180px;background:#2c1a0e;color:#f5e6c8;border-radius:4px;padding:20px 24px;text-align:center;">
-                    <div style="font-family:'Playfair Display',serif;font-size:2em;font-weight:900;color:#e07b2a;">
-                        $12.0B</div>
-                    <div
-                        style="font-size:0.8em;letter-spacing:1px;text-transform:uppercase;margin-top:6px;color:#d4b896;">
-                        Queensland</div>
+                <div style="flex:1;min-width:180px;background:#2c1a0e;color:#f5e6c8;border-radius:4px;padding:20px 24px;text-align:center;">
+                    <div style="font-family:'Playfair Display',serif;font-size:2em;font-weight:900;color:#e07b2a;">$12.0B</div>
+                    <div style="font-size:0.8em;letter-spacing:1px;text-transform:uppercase;margin-top:6px;color:#d4b896;">Queensland</div>
                     <div style="font-size:0.75em;color:#8a6a4a;margin-top:4px;">Beef · Sugar · Cotton</div>
                 </div>
             </div>
             <div class="chart-box-center" id="chart_aus_map"></div>
-            <p class="chart-annotation">Bubble map of Australia showing gross agricultural production value by state
-                (2021–22, ABS). Bubble size and colour intensity both encode production value. Hover over each bubble
-                for the exact figure.</p>
+            <p class="chart-annotation">Bubble map of Australia showing gross agricultural production value by state (2021–22, ABS). Bubble size and colour intensity both encode production value. Hover over each bubble for the exact figure.</p>
             <span class="interactive-hint">Interactive — hover for commodity details</span>
             <div class="chart-box-full" id="chart_heatmap"></div>
-            <p class="chart-annotation">Heatmap showing export values for key commodities from 2005–06 to 2024–25. Rows
-                are sorted by peak export value. Numbers inside cells show the exact value in AUD millions. Wheat's
-                dramatic rise in 2022–23 is immediately visible.</p>
+            <p class="chart-annotation">Heatmap showing export values for key commodities from 2005–06 to 2024–25. Rows are sorted by peak export value. Numbers inside cells show the exact value in AUD millions. Wheat's dramatic rise in 2022–23 is immediately visible.</p>
         </div>
 
         <hr class="divider">
 
-        <!-- SECTION 4 -->
+        <!-- CHAPTER IV -->
         <div class="section">
             <span class="section-label">Chapter IV</span>
             <h2>How Trade Has Shifted Over Time</h2>
             <div class="section-rule"></div>
-            <p class="section-desc">Australia's trading relationships have shifted significantly over the past two
-                decades. China has grown to become Australia's dominant food export market, while wheat exports have
-                surged in recent years. Not all trading relationships are balanced — some countries sell Australia more
-                food than they buy from it, resulting in a net food trade deficit with partners like New Zealand and
-                Singapore.</p>
-            <div class="pull-quote">"While China and Japan are Australia's biggest food export markets, New Zealand and
-                Singapore are actually net food import partners — Australia buys more food from them than it sells."
-            </div>
+            <p class="section-desc">Australia's trading relationships have shifted significantly over the past two decades. China has grown to become Australia's dominant food export market, while wheat exports have surged in recent years. Not all trading relationships are balanced — some countries sell Australia more food than they buy from it, resulting in a net food trade deficit with partners like New Zealand and Singapore.</p>
+            <div class="pull-quote">"While China and Japan are Australia's biggest food export markets, New Zealand and Singapore are actually net food import partners — Australia buys more food from them than it sells."</div>
             <span class="interactive-hint">Interactive — hover over bars to compare export &amp; import values</span>
             <div class="chart-box-full" id="chart_diverging"></div>
-            <p class="chart-annotation">Diverging bar chart: bars extending right = Australian food exports to that
-                country; bars extending left = Australian food imports from that country. Countries where the left bar
-                dominates (New Zealand, Singapore, Thailand) are ones where Australia runs a food trade deficit.</p>
+            <p class="chart-annotation">Diverging bar chart: bars extending right = Australian food exports to that country; bars extending left = Australian food imports from that country. Countries where the left bar dominates (New Zealand, Singapore, Thailand) are ones where Australia runs a food trade deficit.</p>
             <div class="insight-box">
                 <div class="insight-label">Key Insight</div>
-                <p>Australia imports significantly more food from <strong>New Zealand ($2.1B)</strong> than it exports
-                    ($850M) — a deficit of over $1.2 billion. This is largely due to dairy products, processed foods,
-                    and wine from New Zealand crossing the Tasman. <strong>Singapore</strong> similarly sells more food
-                    to Australia ($963M) than it buys ($650M), primarily through processed and packaged goods.</p>
+                <p>Australia imports significantly more food from <strong>New Zealand ($2.1B)</strong> than it exports ($850M) — a deficit of over $1.2 billion. This is largely due to dairy products, processed foods, and wine from New Zealand crossing the Tasman. <strong>Singapore</strong> similarly sells more food to Australia ($963M) than it buys ($650M), primarily through processed and packaged goods.</p>
             </div>
-            <span class="interactive-hint">Interactive — click a commodity in the legend to isolate it</span>
             <div class="chart-box-full" id="chart_line_commodities"></div>
-            <p class="chart-annotation">Multi-line chart showing individual commodity export trends since 2005–06. Click
-                a commodity in the legend to highlight just that line. Wheat's record spike in 2022–23 dwarfs all other
-                commodities. Tree nuts show the strongest sustained growth trajectory.</p>
+            <p class="chart-annotation">Multi-line chart showing individual commodity export trends since 2005–06. Click a commodity in the legend to highlight just that line. Wheat's record spike in 2022–23 dwarfs all other commodities. Tree nuts show the strongest sustained growth trajectory.</p>
         </div>
 
     </div>
@@ -646,14 +551,9 @@
         <div class="footer-inner">
             <div class="footer-col">
                 <h3>Data Sources</h3>
-                <p><a
-                        href="https://www.dfat.gov.au/trade/trade-and-investment-data-information-and-publications/trade-statistics/trade-statistical-pivot-tables">DFAT
-                        Trade Statistics</a></p>
-                <p><a href="https://www.agriculture.gov.au/abares/research-topics/agricultural-outlook/data">ABARES
-                        Agricultural Commodities</a></p>
-                <p><a
-                        href="https://www.abs.gov.au/statistics/industry/agriculture/value-agricultural-commodities-produced-australia/latest-release">ABS
-                        Value of Agricultural Commodities</a></p>
+                <p><a href="https://www.dfat.gov.au/trade/trade-and-investment-data-information-and-publications/trade-statistics/trade-statistical-pivot-tables">DFAT Trade Statistics</a></p>
+                <p><a href="https://www.agriculture.gov.au/abares/research-topics/agricultural-outlook/data">ABARES Agricultural Commodities</a></p>
+                <p><a href="https://www.abs.gov.au/statistics/industry/agriculture/value-agricultural-commodities-produced-australia/latest-release">ABS Value of Agricultural Commodities</a></p>
                 <p><a href="https://wits.worldbank.org">World Bank WITS</a></p>
             </div>
             <div class="footer-col">
@@ -665,9 +565,7 @@
             </div>
             <div class="footer-col">
                 <h3>Visualisation Notes</h3>
-                <p>All monetary values in AUD millions unless stated. Import data from 2023 (latest available); export
-                    data from 2024–25. Trade balance chart derived from combining DFAT export data with World Bank WITS
-                    import data.</p>
+                <p>All monetary values in AUD millions unless stated. Import data from 2023 (latest available); export data from 2024–25. Trade balance chart derived from combining DFAT export data with World Bank WITS import data.</p>
             </div>
         </div>
     </footer>
@@ -675,17 +573,18 @@
     <script>
         const OPTS = { actions: false, renderer: 'svg' };
 
-        vegaEmbed('#chart_line', 'charts/line_total_exports.json', OPTS).catch(console.error);
-        vegaEmbed('#chart_donut', 'charts/donut_categories.json', OPTS).catch(console.error);
-        vegaEmbed('#chart_export_bar', 'charts/bar_top_commodities.json', OPTS).catch(console.error);
-        vegaEmbed('#chart_bar_production', 'charts/bar_production.json', OPTS).catch(console.error);
-        vegaEmbed('#chart_area', 'charts/area_chart.json', OPTS).catch(console.error);
-        vegaEmbed('#chart_lollipop', 'charts/lollipop_growth.json', OPTS).catch(console.error);
-        vegaEmbed('#chart_world_export_map', 'charts/world_map.json', OPTS).catch(console.error);
-        vegaEmbed('#chart_aus_map', 'charts/aus_bubble_map.json', OPTS).catch(console.error);
-        vegaEmbed('#chart_heatmap', 'charts/heatmap.json', OPTS).catch(console.error);
-        vegaEmbed('#chart_diverging', 'charts/diverging_bar.json', OPTS).catch(console.error);
-        vegaEmbed('#chart_line_commodities', 'charts/line_commodities.json', OPTS).catch(console.error);
+        vegaEmbed('#chart_line',             'charts/line_total_exports.json',  OPTS).catch(console.error);
+        vegaEmbed('#chart_donut',            'charts/donut_categories.json',    OPTS).catch(console.error);
+        vegaEmbed('#chart_export_bar',       'charts/bar_top_commodities.json', OPTS).catch(console.error);
+        vegaEmbed('#chart_bar_production',   'charts/bar_production.json',      OPTS).catch(console.error);
+        vegaEmbed('#chart_area',             'charts/area_chart.json',          OPTS).catch(console.error);
+        vegaEmbed('#chart_lollipop',         'charts/lollipop_growth.json',     OPTS).catch(console.error);
+        vegaEmbed('#chart_bump',             'charts/bump_chart.json',           OPTS).catch(console.error);
+        vegaEmbed('#chart_world_export_map', 'charts/world_map.json',           OPTS).catch(console.error);
+        vegaEmbed('#chart_aus_map',          'charts/aus_bubble_map.json',      OPTS).catch(console.error);
+        vegaEmbed('#chart_heatmap',          'charts/heatmap.json',             OPTS).catch(console.error);
+        vegaEmbed('#chart_diverging',        'charts/diverging_bar.json',       OPTS).catch(console.error);
+        vegaEmbed('#chart_line_commodities', 'charts/line_commodities.json',    OPTS).catch(console.error);
     </script>
 </body>
 
